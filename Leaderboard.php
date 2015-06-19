@@ -210,7 +210,7 @@ select username,total_pts from percent_view, profile where percent_view.user_id=
 
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 $num = pg_numrows($result);
-pg_close($dbconn3);
+
 $rows = array();
 while($r = pg_fetch_assoc($result))
 {
@@ -222,5 +222,5 @@ if (strlen($rows[$i][username])>'15')
 $rows[$i][username] = substr($rows[$i][username], 0, 15);
 }
 echo json_encode($rows);
-
+pg_close($dbconn3);
 ?>
