@@ -10,7 +10,7 @@ $result = pg_query($dbconn3, "select avatar_file_name from users where id=$user_
 
 if($rows[0]==0)
 {
-$ar = array("http://savanna.sportslion.com/leaderboard/app/user.png");	
+$ar = array("http://52.24.178.241/amazon_codes/user.png");	
 }
 else
 {
