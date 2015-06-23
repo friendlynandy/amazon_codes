@@ -1,10 +1,10 @@
 <?php
 require_once('connection.php');
 // See the password_hash() example to see where this came from.
-$userid = $_GET['id'];
+$username = $_GET['username'];
 $password = $_GET['encrypted_password'];
 //pgsql get his encrypted_password for the username
-$encrypted_password = pg_query($dbconn3,"select encrypted_password from users where id = '$userid'");
+$encrypted_password = pg_query($dbconn3,"select encrypted_password from users where id = '$username'");
 
 $result = pg_fetch_array($encrypted_password);
 
