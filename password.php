@@ -4,7 +4,7 @@ require_once('connection.php');
 $username = $_GET['username'];
 $password = $_GET['encrypted_password'];
 //pgsql get his encrypted_password for the username
-$encrypted_password = pg_query($dbconn3,"select encrypted_password from users where id = '$username'");
+$encrypted_password = pg_query($dbconn3,"select encrypted_password from users where username = '$username'");
 
 $result = pg_fetch_array($encrypted_password);
 
