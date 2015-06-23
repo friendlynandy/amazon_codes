@@ -1,13 +1,14 @@
 <?php
-$servername = "127.0.0.1";
+$servername = "143.95.39.130";
 $username = "i1241812_wp1";
 $password = "I]UkkPRz4x14";
+$port = "3306";
 $dbname = "i1241812_wp1";
 //$x = $_GET["x"];
 //$y = $_GET["y"];
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname,$port);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
