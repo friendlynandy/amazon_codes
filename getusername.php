@@ -1,7 +1,7 @@
 <?php 
 require_once('connection.php');
-$id = $_GET["id"];
-$result = pg_query($dbconn3, "select username,balance from users where id = '$id'");
+$id = $_GET["username"];
+$result = pg_query($dbconn3, "select username,balance from users where username = '$id'");
 
 $num = pg_numrows($result);
 pg_close($dbconn3);
