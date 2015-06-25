@@ -91,7 +91,7 @@ $salt = substr(strtr(base64_encode(openssl_random_pseudo_bytes(22)), '+', '.'), 
 // 12 is the workload factor (around 300ms on my Core i7 machine), see http://php.net/crypt
 $bodytag = crypt('$encrypted_password', '$2a$10$' . $salt);
 
-echo $bodytag;
+echo $bodytag ."\n";
 echo $bodytag1;
 /*
 $result = pg_query($dbconn3, "INSERT INTO users (full_name,encrypted_password,username,email,tos_agreement,balance,given_points,confirmation_token,created_at,updated_at) VALUES('$full_name','$bodytag','$username','$email','$tos_agreement','20','20','$code','$timestamp_new','$timestamp_new')");
