@@ -78,13 +78,13 @@ else if(isset($username))
 {
 require_once('connection.php');
 $code = str_random();
-/*
+
 $options = [
     'cost' => 10,
 ];
 $hash = password_hash('$encrypted_password', PASSWORD_BCRYPT, $options);
-$bodytag = str_replace("$2y", "$2a", $hash);
-*/
+$bodytag1 = str_replace("$2y", "$2a", $hash);
+
 
 $salt = substr(strtr(base64_encode(openssl_random_pseudo_bytes(22)), '+', '.'), 0, 22);
 // 2y is the bcrypt algorithm selector, see http://php.net/crypt
@@ -92,6 +92,7 @@ $salt = substr(strtr(base64_encode(openssl_random_pseudo_bytes(22)), '+', '.'), 
 $bodytag = crypt('$encrypted_password', '$2a$10$' . $salt);
 
 echo $bodytag;
+echo $bodytag1;
 /*
 $result = pg_query($dbconn3, "INSERT INTO users (full_name,encrypted_password,username,email,tos_agreement,balance,given_points,confirmation_token,created_at,updated_at) VALUES('$full_name','$bodytag','$username','$email','$tos_agreement','20','20','$code','$timestamp_new','$timestamp_new')");
 
