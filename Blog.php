@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 
 $category = $_GET["category"];
 
-if($category=="")
+if($category=="12")
 {
 $result = mysqli_query($conn, "SELECT wp_posts.id as id,`post_date`, `post_excerpt`,`post_title`,`post_name`,`guid`,wp_users.display_name
 FROM  `wp_posts` 
