@@ -51,11 +51,18 @@ $t = microtime(true);
 $micro = sprintf("%06d",($t - floor($t)) * 1000000);
 $d = new DateTime( date('Y-m-d H:i:s.'.$micro, $t) );
 $timestamp = $d->format("Y-m-d H:i:s.u"); 
-
-
-
 require_once('connection.php');
+
+if(isset($_GET["invitebyemail"]))
+{
+$opponent_invitebyemail = $_GET["invitebyemail"];	
+$result = pg_query($dbconn3, "INSERT INTO duel_games (gameable_id,gameable_type,bet_cost,opponent_email,created_at,updated_at,status,user_id,user_competitor_id,opponent_competitor_id,publish) VALUES('$gameable_id','$gameable_type','$bet_cost','$opponent_invitebyemail','$timestamp','$timestamp','$status','$user_id','$user_competitor_id','$opponent_competitor_id','$publish')");	
+}
+else
+{
 $result = pg_query($dbconn3, "INSERT INTO duel_games (gameable_id,gameable_type,bet_cost,opponent_id,created_at,updated_at,status,user_id,user_competitor_id,opponent_competitor_id,publish) VALUES('$gameable_id','$gameable_type','$bet_cost','$opponent_id','$timestamp','$timestamp','$status','$user_id','$user_competitor_id','$opponent_competitor_id','$publish')");
+}
+
 
 //cancel bet
 pg_query($dbconn3,"update users set balance = '$balance', updated_at='$timestamp' where id = '$user_id'");
