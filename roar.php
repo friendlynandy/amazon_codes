@@ -21,7 +21,7 @@ $respond_balance = $_GET["respond_balance"];
 $respond_userid = $_GET["respond_userid"];
 $respond_status = $_GET["respond_status"];
 $respond_gameid =  $_GET["respond_gameid"];
-
+/*
 echo $oppbalance . "<br />";
 echo $opponent_id . "<br />";
 echo $oppstatus . "<br />";
@@ -33,7 +33,7 @@ echo $respond_userid . "<br />";
 echo $respond_status . "<br />";
 echo $respond_gameid . "<br />";
 
-/*
+
 echo $gameable_id . "<br />";
 echo $gameable_type . "<br />";
 echo $bet_cost . "<br />"; 
@@ -90,4 +90,5 @@ while($r = pg_fetch_assoc($affected))
 echo json_encode($rows);
 */
 echo json_encode($rows);
+pg_close($dbconn3);
 ?>
