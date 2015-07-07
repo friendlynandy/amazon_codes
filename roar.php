@@ -56,8 +56,7 @@ require_once('connection.php');
 if(isset($_GET["invitebyemail"]))
 {
 $opponent_invitebyemail = $_GET["invitebyemail"];
-echo $opponent_invitebyemail;
-//$result = pg_query($dbconn3, "INSERT INTO duel_games (gameable_id,gameable_type,bet_cost,opponent_email,created_at,updated_at,status,user_id,user_competitor_id,opponent_competitor_id,publish) VALUES('$gameable_id','$gameable_type','$bet_cost','$opponent_invitebyemail','$timestamp','$timestamp','$status','$user_id','$user_competitor_id','$opponent_competitor_id','$publish')");	
+$result = pg_query($dbconn3, "INSERT INTO duel_games (gameable_id,gameable_type,bet_cost,opponent_email,created_at,updated_at,status,user_id,user_competitor_id,opponent_competitor_id,publish) VALUES('$gameable_id','$gameable_type','$bet_cost','$opponent_invitebyemail','$timestamp','$timestamp','$status','$user_id','$user_competitor_id','$opponent_competitor_id','$publish')");	
 }
 else
 {
@@ -77,8 +76,6 @@ pg_query($dbconn3,"update duel_games set status = '$oppstatus',updated_at='$time
 pg_query($dbconn3,"update users set balance = '$respond_balance', updated_at='$timestamp' where id = '$respond_userid'");
 pg_query($dbconn3,"update duel_games set status = '$respond_status',updated_at='$timestamp' where id = '$respond_gameid'");
 
-
-
 /*
 $rows =  pg_affected_rows ($result);
 if($rows = 1)
@@ -97,6 +94,5 @@ while($r = pg_fetch_assoc($affected))
 }
 echo json_encode($rows);
 */
-echo json_encode($rows);
 pg_close($dbconn3);
 ?>
