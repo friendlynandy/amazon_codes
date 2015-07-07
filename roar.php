@@ -55,8 +55,9 @@ require_once('connection.php');
 
 if(isset($_GET["invitebyemail"]))
 {
-$opponent_invitebyemail = $_GET["invitebyemail"];	
-$result = pg_query($dbconn3, "INSERT INTO duel_games (gameable_id,gameable_type,bet_cost,opponent_email,created_at,updated_at,status,user_id,user_competitor_id,opponent_competitor_id,publish) VALUES('$gameable_id','$gameable_type','$bet_cost','$opponent_invitebyemail','$timestamp','$timestamp','$status','$user_id','$user_competitor_id','$opponent_competitor_id','$publish')");	
+$opponent_invitebyemail = $_GET["invitebyemail"];
+echo $opponent_invitebyemail;
+//$result = pg_query($dbconn3, "INSERT INTO duel_games (gameable_id,gameable_type,bet_cost,opponent_email,created_at,updated_at,status,user_id,user_competitor_id,opponent_competitor_id,publish) VALUES('$gameable_id','$gameable_type','$bet_cost','$opponent_invitebyemail','$timestamp','$timestamp','$status','$user_id','$user_competitor_id','$opponent_competitor_id','$publish')");	
 }
 else
 {
