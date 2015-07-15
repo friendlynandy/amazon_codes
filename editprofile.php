@@ -3,7 +3,7 @@ require_once('connection.php');
 $id = $_GET["id"];
 
 $result = pg_query($dbconn3, "select  full_name,username from users where id = '$id'");
-if(isset[$_GET["username"]])
+if(isset($_GET["username"]))
 {
 $username = $_GET["username"];	
 $result = pg_query($dbconn3, "select  full_name,username from users where username != '$username'");
