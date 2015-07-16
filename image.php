@@ -15,7 +15,7 @@ while($r = pg_fetch_assoc($result))
 if($rows[0][uid]!="")
 {
   $uid = $rows[0][uid];
-  $ar = array("http://graph.facebook.com/".$uid."/picture");
+  $ar = array("http://graph.facebook.com/".$uid."/picture?type=large");
 }
 else if ($rows[1][avatar_file_name]=="")
 {
