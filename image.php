@@ -13,12 +13,6 @@ while($r = pg_fetch_assoc($result))
 {
 	$rows[] = $r;
 }
-
-if($rows[0][uid]!="")
-{
-  $uid = $rows[0][uid];
-  $ar = array("http://graph.facebook.com/".$uid."/picture");
-}
 if ($rows[0][avatar_file_name]=="")
 {
 $ar = array("http://www.sportslion.com/assets/avatar-0b523aaf2f6e9d8aea4d6eb56c4e2db7.png");
@@ -27,6 +21,12 @@ else
 {
 $ar = array("http://sportslion.production.s3-eu-west-1.amazonaws.com/users/avatars/000/000/".$user_id ."/large/".$rows[0][avatar_file_name]);
 }
+if($rows[0][uid]!="")
+{
+  $uid = $rows[0][uid];
+  $ar = array("http://graph.facebook.com/".$uid."/picture");
+}
+
 
 
 echo json_encode($ar, JSON_FORCE_OBJECT);
