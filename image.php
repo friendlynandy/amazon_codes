@@ -24,7 +24,7 @@ $ar = array("http://sportslion.production.s3-eu-west-1.amazonaws.com/users/avata
 if($rows[0][uid]!="")
 {
   $uid = $rows[0][uid];
-  $ar = array("http://graph.facebook.com/".$uid."/picture");
+  $ar = array("http://graph.facebook.com/".$uid."/picture?type=large");
 }
 
 
