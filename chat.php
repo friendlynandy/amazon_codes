@@ -5,7 +5,7 @@ $sent_user_id = $_GET['opponent_id'];
 $message = $_GET['message'];
 $date_new = new DateTime();
 $timestamp = $date_new->format('Y-m-d H:i:s');
-if(isset($_GET["emailid"] && $_GET['opponent_id'] && $_GET['message']))
+if(isset($_GET['duel_games_id'] && $_GET['opponent_id'] && $_GET['message']))
 {
 $duel_games_id = $_GET['duel_games_id'];
 $sent_user_id = $_GET['opponent_id'];
