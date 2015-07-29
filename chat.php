@@ -13,7 +13,7 @@ $message = $_GET['message'];
 $result = pg_query($dbconn3, "INSERT INTO  chats (duel_games_id,sent_user_id,message,created_at,updated_at) VALUES('$duel_games_id','$sent_user_id','$message','$timestamp','$timestamp')");
 }
 
-$result1 = pg_query($dbconn3, "select * from chats where duel_games_id = '$duel_games_id' order by id desc");
+$result1 = pg_query($dbconn3, "select * from chats where duel_games_id = '$duel_games_id' order by id desc limit 10");
 $num = pg_numrows($result1);
 $rows = array();
 while($r = pg_fetch_assoc($result1))
