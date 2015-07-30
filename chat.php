@@ -26,7 +26,8 @@ while($r = pg_fetch_assoc($result1))
 {
 	$rows[] = $r;
 }
-echo json_encode($rows);
+$jsonreverse = json_encode($rows);
+echo array_reverse($jsonreverse);
 }
 pg_close($dbconn3);
 ?>
