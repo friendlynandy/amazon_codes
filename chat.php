@@ -26,7 +26,7 @@ while($r = pg_fetch_assoc($result1))
 {
 	$rows[] = $r;
 }
-echo json_encode($rows,JSON_PRETTY_PRINT);
+echo json_encode($rows);
 }
 pg_close($dbconn3);
 ?>
