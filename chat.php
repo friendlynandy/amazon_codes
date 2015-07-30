@@ -27,12 +27,12 @@ while($r = pg_fetch_assoc($result1))
 	$rows[] = $r;
 }
 $input = json_encode($rows);
-$reversed = array_reverse($input);
-$preserved = array_reverse($input, true);
+//$reversed = array_reverse($input);
+//$preserved = array_reverse($input, true);
 
 print_r($input);
-print_r($reversed);
-print_r($preserved);
+//print_r($reversed);
+//print_r($preserved);
 }
 pg_close($dbconn3);
 ?>
