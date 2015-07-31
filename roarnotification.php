@@ -1,6 +1,6 @@
 <?php
 require_once('connection.php');
-$result = pg_query($dbconn3,"select ios_token_id,ios_notification_badge from push_notifiers");
+//$result = pg_query($dbconn3,"select ios_token_id,ios_notification_badge from push_notifiers");
 
 $opponentid = $_GET["opponent_id"];
 $userid = $_GET["user_id"];
