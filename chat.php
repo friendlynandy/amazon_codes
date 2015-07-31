@@ -13,28 +13,23 @@ $duel_games_id = $_GET['duel_games_id'];
 $sent_user_id = $_GET['opponent_id'];
 $message = $_GET['message'];
 $result = pg_query($dbconn3, "INSERT INTO  chats (duel_games_id,sent_user_id,message,created_at,updated_at) VALUES('$duel_games_id','$sent_user_id','$message','$timestamp','$timestamp')");
-
-$opponentid = $_GET["opponent_id"];
 $userid = $_GET["user_id"];
-
-$result = pg_query($dbconn3,"select ios_token_id,ios_notification_badge from push_notifiers where user_id = '$sent_user_id' ");
+$devicetoken = pg_query($dbconn3,"select ios_token_id,ios_notification_badge from push_notifiers where user_id = '$sent_user_id' ");
 
 $result1 = pg_query($dbconn3,"select username from users where id = '$userid'");
-
-
-$value = pg_fetch_row($result);
+$value = pg_fetch_row($devicetoken);
 // print_r ($value[0]);
 $value1 = pg_fetch_row($result1);
 // print_r ($value1[0]);
 
 if($value[0]!="" || $value[0]!=NULL)
 {
-$message = "Hi,".$value1[0]." has placed a roar against you";
+$notificationmessage = $message;
 $notification = $value[1]+1;
 $payload = '{
                  "aps" :
                  
-                        {  "alert" : "'.$message.'",
+                        {  "alert" : "'.$notificationmessage.'",
                            "badge" : '.$notification.',
                            "sound" : "default"
                         }
