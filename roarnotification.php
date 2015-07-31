@@ -1,7 +1,5 @@
 <?php
-
-
-$dbconn3 = pg_connect("host=ec2-79-125-7-27.eu-west-1.compute.amazonaws.com port=5552 dbname=d39ubt6siqrqmf user=u5rve30b5so8gv password=peqhcba53fc1d4qrebs5ok7b22");
+require_once('connection.php');
 $result = pg_query($dbconn3,"select ios_token_id,ios_notification_badge from push_notifiers");
 
 $opponentid = $_GET["opponent_id"];
@@ -51,8 +49,7 @@ else
   $result2 = pg_query($dbconn3,"update push_notifiers set ios_notification_badge = '$notification' where ios_token_id = '$deviceToken'");
  }
 fclose($fp);
-
-
+pg_close($dbconn3);
 ?>
 
 
