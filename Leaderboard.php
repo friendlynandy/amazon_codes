@@ -172,8 +172,9 @@ as game group by username,user_id,balance order by balance desc
 ) as point where tennis_won>tennis_lost and (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25) order by total_pts desc limit '10'";
 }
 
-else 
+else if(isset($_GET['ranks']))
 {
+$ranks = $_GET['ranks'];
 $query = "create temp view duel_games_view as 
 select id,username, sum(bet_cost) as frozen_points from ( 
 SELECT users.id,users.username,duel_games.bet_cost FROM users,duel_games where 
