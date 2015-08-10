@@ -64,7 +64,7 @@ if(isset($_GET['duel_games_id']) && isset($_GET['x']) && isset($_GET['y']))
 $duel_games_id = $_GET['duel_games_id'];
 $x = $_GET["x"];
 $y = $_GET["y"];
-$result1 = pg_query($dbconn3, "select * from chats where duel_games_id = '$duel_games_id' limit $y offset $x");
+$result1 = pg_query($dbconn3, "select * from chats where duel_games_id = '$duel_games_id' order by id desc limit $y offset $x");
 $num = pg_numrows($result1);
 $rows = array();
 while($r = pg_fetch_assoc($result1))
