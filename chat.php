@@ -73,7 +73,7 @@ while($r = pg_fetch_assoc($result1))
 	$rows[] = $r;
 }
 $result = array_reverse($input)
-$output = json_encode($result);
+$output = json_encode($result1);
 //$reversed = array_reverse($input);
 //$preserved = array_reverse($input, true);
 
