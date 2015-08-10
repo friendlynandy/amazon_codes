@@ -61,8 +61,7 @@ fclose($fp);
 */
 if(isset($_GET['duel_games_id']) && isset($_GET['x']) && isset($_GET['y']))
 {
-	echo "HIIIII";
-/*
+
 $duel_games_id = $_GET['duel_games_id'];
 $x = $_GET["x"];
 $y = $_GET["y"];
@@ -73,13 +72,13 @@ while($r = pg_fetch_assoc($result1))
 {
 	$rows[] = $r;
 }
-$result = array_reverse($input)
-$output = json_encode($result1);
+$input = array_reverse($result1);
+$output = json_encode($input);
 //$reversed = array_reverse($input);
 //$preserved = array_reverse($input, true);
 
 print_r($output);
-*/
+
 //print_r($reversed);
 //print_r($preserved);
 }
