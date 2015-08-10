@@ -22,6 +22,7 @@ $value = pg_fetch_row($devicetoken);
 // print_r ($value[0]);
 $value1 = pg_fetch_row($result1);
 // print_r ($value1[0]);
+echo $value1;
 
 if($value[0]!="" || $value[0]!=NULL)
 {
