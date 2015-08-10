@@ -25,7 +25,6 @@ $value1 = pg_fetch_row($result1);
 if($value1[0]!="" || $value1[0]!=NULL)
 {
 $notificationmessage = "$value1[0]".":".$message;
-echo $notificationmessage;
 $notification = $value[1]+1;
 $payload = '{
                  "aps" :
