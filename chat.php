@@ -26,7 +26,7 @@ echo $value1;
 
 if($value[0]!="" || $value[0]!=NULL)
 {
-$notificationmessage = $message;
+$notificationmessage = .$value1[0].":"$message;
 $notification = $value[1]+1;
 $payload = '{
                  "aps" :
