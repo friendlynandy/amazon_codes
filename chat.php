@@ -7,7 +7,7 @@ $date_new = new DateTime();
 $timestamp = $date_new->format('Y-m-d H:i:s');
 //$x = $_GET["x"];
 //$y = $_GET["y"];
-/*
+
 if(isset($_GET['duel_games_id']) && isset($_GET['opponent_id']) && isset($_GET['message'] && isset($_GET['user_id']))
 {
 $duel_games_id = $_GET['duel_games_id'];
@@ -58,7 +58,6 @@ else
  }
 fclose($fp);
 }
-*/
 if(isset($_GET['duel_games_id']) && isset($_GET['x']) && isset($_GET['y']))
 {
 
