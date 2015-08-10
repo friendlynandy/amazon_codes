@@ -62,6 +62,7 @@ fclose($fp);
 if(isset($_GET['duel_games_id']) && isset($_GET['x']) && isset($_GET['y']))
 {
 	echo "HIIIII";
+/*
 $duel_games_id = $_GET['duel_games_id'];
 $x = $_GET["x"];
 $y = $_GET["y"];
@@ -78,6 +79,7 @@ $output = json_encode($result1);
 //$preserved = array_reverse($input, true);
 
 print_r($output);
+*/
 //print_r($reversed);
 //print_r($preserved);
 }
