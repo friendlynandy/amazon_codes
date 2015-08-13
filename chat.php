@@ -35,8 +35,6 @@ $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 echo $email_confirmation;
 mail($email_confirmation, $subject, $message, $headers);
 echo 'mail sent';
-}
-/*
 $result1 = pg_query($dbconn3,"select username from users where id = '$userid'");
 // print_r ($value[0]);
 $value1 = pg_fetch_row($result1);
@@ -76,8 +74,8 @@ else
  }
  
 fclose($fp);
-*/
 
+}
 if(isset($_GET['duel_games_id']) && isset($_GET['x']) && isset($_GET['y']))
 {
 
