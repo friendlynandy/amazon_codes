@@ -15,7 +15,7 @@ $sent_user_id = $_GET['opponent_id'];
 $message = $_GET['message'];
 $result = pg_query($dbconn3, "INSERT INTO  chats (duel_games_id,sent_user_id,message,created_at,updated_at) VALUES('$duel_games_id','$sent_user_id','$message','$timestamp','$timestamp')");
 $userid = $_GET["user_id"];
-$devicetoken = pg_query($dbconn3,"select a.ios_token_id,a.ios_notification_badge,b.email,b.username from push_notifiers a left join users b on a.user_id = b.id where a.user_id = '$sent_user_id'");
+$devicetoken = pg_query($dbconn3,"select b.ios_token_id,b.ios_notification_badge,a.email,a.username from users a left join push_notifiers b on a.id = b.user_id where a.id = '$sent_user_id'");
 $value = pg_fetch_row($devicetoken);
 $email_confirmation = $value[2];
 echo $email_confirmation;
