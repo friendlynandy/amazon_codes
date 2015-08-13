@@ -35,6 +35,7 @@ $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 echo $email_confirmation;
 mail($email_confirmation, $subject, $message, $headers);
 echo 'mail sent';
+}
 /*
 $result1 = pg_query($dbconn3,"select username from users where id = '$userid'");
 // print_r ($value[0]);
@@ -76,7 +77,7 @@ else
  
 fclose($fp);
 */
-}
+
 if(isset($_GET['duel_games_id']) && isset($_GET['x']) && isset($_GET['y']))
 {
 
@@ -94,7 +95,6 @@ $input = array_reverse($rows);
 $output = json_encode($input);
 //$reversed = array_reverse($input);
 //$preserved = array_reverse($input, true);
-
 print_r($output);
 
 //print_r($reversed);
