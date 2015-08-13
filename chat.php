@@ -72,8 +72,9 @@ else
 
   $result2 = pg_query($dbconn3,"update push_notifiers set ios_notification_badge = '$notification' where ios_token_id = '$deviceToken'");
  }
- */
+ 
 fclose($fp);
+*/
 }
 if(isset($_GET['duel_games_id']) && isset($_GET['x']) && isset($_GET['y']))
 {
