@@ -15,7 +15,7 @@ $sent_user_id = $_GET['opponent_id'];
 $message = $_GET['message'];
 $result = pg_query($dbconn3, "INSERT INTO  chats (duel_games_id,sent_user_id,message,created_at,updated_at) VALUES('$duel_games_id','$sent_user_id','$message','$timestamp','$timestamp')");
 $userid = $_GET["user_id"];
-$devicetoken = pg_query($dbconn3,"select ios_token_id,ios_notification_badge from push_notifiers where user_id = '$sent_user_id' ");
+$devicetoken = pg_query($dbconn3,"select a.ios_token_id,a.ios_notification_badge,b.email,b.username from push_notifiers a left join users b on a.user_id = b.id where a.user_id = '$sent_user_id'");
 
 $result1 = pg_query($dbconn3,"select username from users where id = '$userid'");
 $value = pg_fetch_row($devicetoken);
@@ -48,7 +48,8 @@ else
    print "Notification sent";
 }
 
-	$deviceToken = $value[0];
+   $deviceToken = $value[0];
+   echo $deviceToken;
    $msg = chr (0) . pack("n",32) . pack('H*', str_replace(' ', '', $deviceToken)) . pack("n",strlen($payload)) . $payload;
    print "sending message :" . $payload . "n";
    fwrite($fp, $msg);
