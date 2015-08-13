@@ -18,6 +18,7 @@ $userid = $_GET["user_id"];
 $devicetoken = pg_query($dbconn3,"select a.ios_token_id,a.ios_notification_badge,b.email,b.username from push_notifiers a left join users b on a.user_id = b.id where a.user_id = '$sent_user_id'");
 $value = pg_fetch_row($devicetoken);
 $email_confirmation = $value[2];
+echo $email_confirmation;
 $subject = 'Confirmation email';
 $message .= '<div style="background:#f1f4f5;font-family:Arial;margin:0;padding:0 50px" bgcolor="#f1f4f5">
 <table align="center" width="600px" style="background:white;border-bottom-left-radius:5px;border-bottom-right-radius:5px;border-collapse:collapse;border:0" bgcolor="white">
