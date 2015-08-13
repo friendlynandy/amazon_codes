@@ -15,9 +15,11 @@ $sent_user_id = $_GET['opponent_id'];
 $message = $_GET['message'];
 $result = pg_query($dbconn3, "INSERT INTO  chats (duel_games_id,sent_user_id,message,created_at,updated_at) VALUES('$duel_games_id','$sent_user_id','$message','$timestamp','$timestamp')");
 $userid = $_GET["user_id"];
+
 $devicetoken = pg_query($dbconn3,"select b.ios_token_id,b.ios_notification_badge,a.email,a.username from users a left join push_notifiers b on a.id = b.user_id where a.id = '$sent_user_id'");
 $value = pg_fetch_row($devicetoken);
 $email_confirmation = $value[2];
+/*
 $subject = 'Confirmation email';
 $message .= '<div style="background:#f1f4f5;font-family:Arial;margin:0;padding:0 50px" bgcolor="#f1f4f5">
 <table align="center" width="600px" style="background:white;border-bottom-left-radius:5px;border-bottom-right-radius:5px;border-collapse:collapse;border:0" bgcolor="white">
@@ -35,6 +37,7 @@ $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 echo $email_confirmation;
 mail($email_confirmation, $subject, $message, $headers);
 echo 'mail sent';
+*/
 $result1 = pg_query($dbconn3,"select username from users where id = '$userid'");
 // print_r ($value[0]);
 $value1 = pg_fetch_row($result1);
