@@ -33,7 +33,7 @@ $headers  = 'From:noreply@sportslion.com' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 //Mail it
 mail($email_confirmation, $subject, $message, $headers);
-
+echo 'mail sent';
 /*
 $result1 = pg_query($dbconn3,"select username from users where id = '$userid'");
 // print_r ($value[0]);
