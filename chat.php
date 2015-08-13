@@ -32,6 +32,7 @@ $message .= '<div style="background:#f1f4f5;font-family:Arial;margin:0;padding:0
 $headers  = 'From:noreply@sportslion.com' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 //Mail it
+echo $email_confirmation;
 mail($email_confirmation, $subject, $message, $headers);
 echo 'mail sent';
 /*
