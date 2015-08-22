@@ -1,0 +1,2 @@
+[08-Jan-2015 04:49:16 America/Detroit] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/php54/lib/php/extensions/no-debug-non-zts-20100525/imagick.so' - liblcms2.so.2: cannot open shared object file: No such file or directory in Unknown on line 0
+[08-Jan-2015 04:55:15 America/Detroit] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/php54/lib/php/extensions/no-debug-non-zts-20100525/imagick.so' - liblcms2.so.2: cannot open shared object file: No such file or directory in Unknown on line 0

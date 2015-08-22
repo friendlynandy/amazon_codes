@@ -1,0 +1,23 @@
+[18-Dec-2014 10:30:12 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/sportsl1/public_html/safeertest/sensortest.php on line 40
+[18-Dec-2014 10:30:16 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/sportsl1/public_html/safeertest/sensortest.php on line 40
+[18-Dec-2014 10:30:30 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/sportsl1/public_html/safeertest/sensortest.php on line 40
+[18-Dec-2014 10:30:57 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/sportsl1/public_html/safeertest/sensortest.php on line 41
+[18-Dec-2014 10:31:24 America/Indiana/Indianapolis] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, resource given in /home/sportsl1/public_html/safeertest/sensortest.php on line 19
+[18-Dec-2014 10:31:24 America/Indiana/Indianapolis] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/sportsl1/public_html/safeertest/sensortest.php on line 21
+[18-Dec-2014 10:32:01 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/sportsl1/public_html/safeertest/sensortest.php on line 7
+[18-Dec-2014 10:32:01 America/New_York] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/sportsl1/public_html/safeertest/sensortest.php on line 9
+[18-Dec-2014 10:32:04 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/sportsl1/public_html/safeertest/sensortest.php on line 7
+[18-Dec-2014 10:32:04 America/New_York] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/sportsl1/public_html/safeertest/sensortest.php on line 9
+[18-Dec-2014 10:32:22 America/Indiana/Indianapolis] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, resource given in /home/sportsl1/public_html/safeertest/sensortest.php on line 17
+[18-Dec-2014 10:32:22 America/Indiana/Indianapolis] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/sportsl1/public_html/safeertest/sensortest.php on line 19
+[18-Dec-2014 10:32:46 America/Indiana/Indianapolis] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, resource given in /home/sportsl1/public_html/safeertest/sensortest.php on line 19
+[18-Dec-2014 10:32:46 America/Indiana/Indianapolis] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/sportsl1/public_html/safeertest/sensortest.php on line 21
+[18-Dec-2014 10:34:30 America/Indiana/Indianapolis] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, resource given in /home/sportsl1/public_html/safeertest/sensortest.php on line 19
+[18-Dec-2014 10:34:30 America/Indiana/Indianapolis] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/sportsl1/public_html/safeertest/sensortest.php on line 21
+[18-Dec-2014 10:36:51 America/Indiana/Indianapolis] PHP Warning:  pg_query(): No PostgreSQL link opened yet in /home/sportsl1/public_html/safeertest/sensortest.php on line 17
+[18-Dec-2014 10:36:51 America/Indiana/Indianapolis] PHP Warning:  pg_last_error(): No PostgreSQL link opened yet in /home/sportsl1/public_html/safeertest/sensortest.php on line 17
+[18-Dec-2014 10:38:44 America/New_York] PHP Parse error:  syntax error, unexpected ';' in /home/sportsl1/public_html/safeertest/sensortest.php on line 17
+[18-Dec-2014 10:43:01 America/Indiana/Indianapolis] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, resource given in /home/sportsl1/public_html/safeertest/sensortest.php on line 17
+[18-Dec-2014 10:52:12 America/New_York] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in /home/sportsl1/public_html/safeertest/sensortest.php on line 33
+[18-Dec-2014 10:52:14 America/New_York] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in /home/sportsl1/public_html/safeertest/sensortest.php on line 33
+[18-Dec-2014 10:54:20 America/New_York] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in /home/sportsl1/public_html/safeertest/sensortest.php on line 35
