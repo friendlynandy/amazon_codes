@@ -202,7 +202,7 @@ select user_id,
 from user_duel_games where (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25)
 group by user_id order by total desc
 ) as percen;
-select username,total_pts from percent_view, profile where percent_view.user_id=profile.id order by total_pts desc limit 10";
+select username,total_pts from percent_view, profile where percent_view.user_id=profile.id order by total_pts desc limit '$ranks'";
 }
 
 
