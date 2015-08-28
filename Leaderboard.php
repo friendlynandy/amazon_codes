@@ -20,7 +20,7 @@ left join sports d on c.sport_id = d.id
 left join users e on a.user_id=e.id
 where b.status='finished' group by a.id,a.user_id,b.gameable_id,b.bet_cost,c.sport_id,d.name,e.username,e.balance order by a.user_id) 
 as game group by username,user_id,balance order by balance desc
-) as point where amer_football_won>amer_football_lost and (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25) order by total_pts desc limit '10'";
+) as point where amer_football_won>amer_football_lost and (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25) order by total_pts desc limit '$ranks'";
 }
 else if($category==389)
 {
