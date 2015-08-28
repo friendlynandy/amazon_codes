@@ -20,7 +20,7 @@
 
 
 	<header class="page-header">
-		<h1 class="page-title" style="font-size:15px;float:right;"><a href="http://savanna.sportslion.com/leaderboard//index.php?numb=10">Top 10</a>  |  <a href="http://savanna.sportslion.com/leaderboard/index.php?numb=20">Top 20</a>  |  <a href="http://savanna.sportslion.com/leaderboard/index.php?numb=30">Top 30</a></h1>
+		<h1 class="page-title" style="font-size:15px;float:right;"><a href="http://54.191.199.139/amazon_codes/leaderboard/index.php?numb=10">Top 10</a>  |  <a href="http://54.191.199.139/amazon_codes/leaderboard/index.php?numb=20">Top 20</a>  |  <a href="http://54.191.199.139/amazon_codes/leaderboard/index.php?numb=30">Top 30</a></h1>
 	</header><!-- .page-header -->
 	<div class="page-content">
 		<center>
