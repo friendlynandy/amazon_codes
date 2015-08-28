@@ -48,7 +48,7 @@ else if($_GET["numb"] === "30")
 }
 // Performing SQL query
 include("include/connect.php");
-$query = "create temp view duel_games_view as 
+$query = "create or replace temp view duel_games_view as 
 select id,username, sum(bet_cost) as frozen_points from ( 
 SELECT users.id,users.username,duel_games.bet_cost FROM users,duel_games where 
 (duel_games.status = 'accepted' or duel_games.status = 'pending') and (users.id=duel_games.user_id) 
@@ -58,13 +58,13 @@ SELECT users.id,users.username,bet_cost FROM users,duel_games where
 (users.id=duel_games.opponent_id) ORDER BY username DESC ) as t 
 group by id,username order by frozen_points desc;
 
-create temp view profile as select id,username, balance+frozen_points as total_pts from (
+create or replace temp view profile as select id,username, balance+frozen_points as total_pts from (
 select users.id,users.username,users.balance,(case frozen_points
  when frozen_points then frozen_points else cast (0 as numeric) end) as frozen_points
 from users left join duel_games_view on users.id = duel_games_view.id
 group by users.id,duel_games_view.frozen_points) as tab order by total_pts desc;
 
-create temp view percent_view as
+create or replace temp view percent_view as
 select user_id,total as total_bets, round(cast((won*100.0::float)/total as numeric),2) as won_percentage, 
 		round(cast((lost*100.0::float)/total as numeric),2) as lost_percentage,
 		round(cast((draw*100.0::float)/total as numeric),2) as draw_percentage
