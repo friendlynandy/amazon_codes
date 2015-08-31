@@ -1,7 +1,7 @@
 <?php
 require_once('connection.php');
 $competition_id = $_GET["competition_id"];
-$opponentcompetitor_id = $_GET["opponent_competitor_id"];
+//$opponentcompetitor_id = $_GET["opponent_competitor_id"];
 $user_id = $_GET["user_id"];
 //$row = pg_fetch_row($id);
 $result = pg_query($dbconn3, "select d.username, user_id,count(user_id) from(
@@ -22,6 +22,10 @@ $rows = array();
 while($r = pg_fetch_assoc($result))
 {
 	$rows[] = $r;
+}
+if($rows=="" or $rows == NULL)
+{
+	
 }
 echo json_encode($rows);
 pg_close($dbconn3);
