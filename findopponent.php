@@ -23,9 +23,15 @@ while($r = pg_fetch_assoc($result))
 {
 	$rows[] = $r;
 }
-if($rows=="" or $rows == NULL)
+if(($rows=="" or $rows == NULL) && $user_id != '11')
 {
-	
+$rows[user_id] = '11';
+$rows[username] = 'Liinus Hietaniemi';
+}
+else if (($rows=="" or $rows == NULL) && $user_id == '11')
+{
+$rows[user_id] = '5';
+$rows[username] = 'Mighty Sports Lion';	
 }
 echo json_encode($rows);
 pg_close($dbconn3);
