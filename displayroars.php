@@ -33,7 +33,7 @@ left join players k on b.competitable_id = k.id
 left join players l on d.competitable_id = l.id
 left join sports m on l.sport_id = m.id
 left join competitions n on a.gameable_id = n.id
-order by a.id desc limit 10
+order by a.id desc limit 150
 ");
 
 $num = pg_numrows($result);
