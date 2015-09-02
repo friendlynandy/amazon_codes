@@ -21,7 +21,7 @@ $value = pg_fetch_row($devicetoken);
 $email_confirmation = $value[2];
 pg_query($dbconn3, "INSERT INTO chat_notifiers (user_id, duel_games_id,notification_badge) SELECT '$userid', '$duel_games_id','0' WHERE  NOT EXISTS (SELECT id FROM chat_notifiers WHERE user_id = '$userid' and duel_games_id = '$duel_games_id')");
 pg_query($dbconn3, "INSERT INTO chat_notifiers (user_id, duel_games_id,notification_badge) SELECT '$sent_user_id', '$duel_games_id','0' WHERE  NOT EXISTS (SELECT id FROM chat_notifiers WHERE user_id = '$sent_user_id' and duel_games_id = '$duel_games_id')");
-pg_query($dbconn3, "update chat_notifiers set notification_badge = notification_badge+1 where duel_games_id = '$duel_games_id' and user_id = '$userid'");
+pg_query($dbconn3, "update chat_notifiers set notification_badge = notification_badge+1 where duel_games_id = '$duel_games_id' and user_id = '$sent_user_id'");
 
 /*
 $subject = 'Confirmation email';
