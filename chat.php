@@ -19,7 +19,7 @@ $userid = $_GET["user_id"];
 $devicetoken = pg_query($dbconn3,"select b.ios_token_id,b.ios_notification_badge,a.email,a.username from users a left join push_notifiers b on a.id = b.user_id where a.id = '$sent_user_id'");
 $value = pg_fetch_row($devicetoken);
 $email_confirmation = $value[2];
-pg_query($dbconn3, "INSERT INTO chat_notifiers (user_id, duel_games_id) SELECT '$userid', '$duel_games_id' WHERE  NOT EXISTS (SELECT id FROM chat_notifiers WHERE user_id = '$userid' and duel_games_id = '$duel_games_id'");
+pg_query($dbconn3, "INSERT INTO chat_notifiers (user_id, duel_games_id) SELECT '$userid', '$duel_games_id' WHERE  NOT EXISTS (SELECT id FROM chat_notifiers WHERE user_id = '$userid' and duel_games_id = '$duel_games_id')");
 pg_query($dbconn3, "update chat_notifiers set notification_badge = notification_badge+1 where duel_games_id = '$duel_games_id' and user_id = '$userid' ");
 
 /*
