@@ -66,6 +66,10 @@ foreach ($rows as $key => $value)
 		{
 		$rows[$key][user_player]="?";
 		}
+		if ($rows[$key][notification_badge]=="")
+		{
+		$rows[$key][notification_badge]="0";
+		}
 		
 		if ($rows[$key][opponent_player]=="")
 		{
