@@ -93,7 +93,7 @@ $result1 = pg_query($dbconn3, "select * from chats where duel_games_id = '$duel_
 $num = pg_numrows($result1);
 $rows = array();
 $userid = $_GET["user_id"];
-//pg_query($dbconn3, "update chat_notifiers set notification_badge = 0 where duel_games_id = '$duel_games_id' and user_id = '$userid'");
+pg_query($dbconn3, "update chat_notifiers set notification_badge = 0 where duel_games_id = '$duel_games_id' and user_id = '$userid'");
 while($r = pg_fetch_assoc($result1))
 {
 	$rows[] = $r;
