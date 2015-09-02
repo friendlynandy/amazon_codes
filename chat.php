@@ -19,6 +19,9 @@ $userid = $_GET["user_id"];
 $devicetoken = pg_query($dbconn3,"select b.ios_token_id,b.ios_notification_badge,a.email,a.username from users a left join push_notifiers b on a.id = b.user_id where a.id = '$sent_user_id'");
 $value = pg_fetch_row($devicetoken);
 $email_confirmation = $value[2];
+
+pg_query($dbconn3, "update chat_notifiers set notification_badge = notification_badge+1 where duel_games_id = $duel_games_id and user_id = $userid ");
+
 /*
 $subject = 'Confirmation email';
 $message .= '<div style="background:#f1f4f5;font-family:Arial;margin:0;padding:0 50px" bgcolor="#f1f4f5">
@@ -88,6 +91,8 @@ $y = $_GET["y"];
 $result1 = pg_query($dbconn3, "select * from chats where duel_games_id = '$duel_games_id' order by id desc limit $y offset $x");
 $num = pg_numrows($result1);
 $rows = array();
+$userid = $_GET["user_id"];
+pg_query($dbconn3, "update chat_notifiers set notification_badge = 0 where duel_games_id = $duel_games_id and user_id = $userid ");
 while($r = pg_fetch_assoc($result1))
 {
 	$rows[] = $r;
