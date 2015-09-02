@@ -90,8 +90,6 @@ $duel_games_id = $_GET['duel_games_id'];
 $x = $_GET["x"];
 $y = $_GET["y"];
 $userid = $_GET['user_id'];
-echo $userid;
-var_dump($userid);
 pg_query($dbconn3, "update chat_notifiers set notification_badge = 0 where duel_games_id = '$duel_games_id' and user_id = '$userid'");
 $result1 = pg_query($dbconn3, "select * from chats where duel_games_id = '$duel_games_id' order by id desc limit $y offset $x");
 $num = pg_numrows($result1);
