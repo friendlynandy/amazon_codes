@@ -1,4 +1,5 @@
 <?php
 $name = $_GET['name'];
-echo json_response($name);
+echo json_encode($name);
+
 ?>
