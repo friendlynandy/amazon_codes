@@ -1,4 +1,4 @@
 <?php
-$Name = _GET['name'];
+$Name = $_GET['name'];
 json_response($name);
 ?>
