@@ -8,8 +8,8 @@ function amazonSesEmail($to, $subject, $message)
         'key' => 'AKIAIUBQUFTDXXNOUODQ',
         'secret' => '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'
     ));
-$fromEmailAddress = 'raghunadh2006ster@outlook.com';
- $amazonSes->verify_email_address($fromEmailAddress);
+// $fromEmailAddress = 'raghunadh2006ster@outlook.com';
+//  $amazonSes->verify_email_address($fromEmailAddress);
     $response = $amazonSes->send_email('raghunadh2006ster@gmail.com',
         array('ToAddresses' => array($to)),
         array(
