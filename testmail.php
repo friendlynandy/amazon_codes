@@ -22,6 +22,6 @@ function amazonSesEmail($to, $subject, $message)
     {
        echo "error";
     }
-   echo success;
+  
 }
 ?>
