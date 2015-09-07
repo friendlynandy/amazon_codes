@@ -1,8 +1,6 @@
 <?php
 include('AWSSDKforPHP/sdk.class.php');
-
-
-amazonSesEmail('raghunadh2006ster@me.com','bka','sadfsaf');
+amazonSesEmail('raghunadh2006ster@outlook.com','bka','sadfsaf');
 
 function amazonSesEmail($to, $subject, $message)
 {
