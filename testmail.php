@@ -10,7 +10,7 @@ function amazonSesEmail($to, $subject, $message)
     ));
 $fromEmailAddress = 'raghunadh2006ster@outlook.com';
  $amazonSes->verify_email_address($fromEmailAddress);
-    $response = $amazonSes->send_email('raghunadh2006ster@outlook.com',
+    $response = $amazonSes->send_email('raghunadh2006ster@me.com',
         array('ToAddresses' => array($to)),
         array(
             'Subject.Data' => $subject,
