@@ -1,4 +1,5 @@
 <?php
+/*
 $mailto="raghunadh2006ster@outlook.com";
  $subject="mail test";
  $content="test";
@@ -9,4 +10,11 @@ $mailto="raghunadh2006ster@outlook.com";
     error_log($mailto, 0);  
     echo "mail fail";
  }
+ */
+ $mail=mail($to, "Subject: $subject",$message );
+if($mail){
+  echo "Thank you for using our mail form";
+}else{
+  echo "Mail sending failed."; 
+}
 ?>
