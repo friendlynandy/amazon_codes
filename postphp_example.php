@@ -3,6 +3,6 @@
 
 $name = $_POST['$username'];
 
-echo json_response($name);
+echo json_encode($name);
 
 ?>
