@@ -1,20 +1,23 @@
 <?php
-/*
-$mailto="raghunadh2006ster@outlook.com";
- $subject="mail test";
- $content="test";
- $result=mail($mailto, $subject, $content);
- if($result){
-    echo "mail success";
- }else  {
-    error_log($mailto, 0);  
-    echo "mail fail";
- }
- */
- $mail=mail($to, "Subject: $subject",$message );
-if($mail){
-  echo "Thank you for using our mail form";
-}else{
-  echo "Mail sending failed.";
+include('AWSSDKforPHP/sdk.class.php');
+
+function amazonSesEmail($to, $subject, $message)
+{
+    $amazonSes = new AmazonSES(array(
+        'key' => AKIAIUBQUFTDXXNOUODQ,
+        'secret' => 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
+    ));
+ 
+    $response = $amazonSes->send_email(AWS_SES_FROM_EMAIL,
+        array('ToAddresses' => array($to)),
+        array(
+            'Subject.Data' => $subject,
+            'Body.Text.Data' => $message,
+        )
+    );
+    if (!$response->isOK())
+    {
+        // handle error
+    }
 }
 ?>
