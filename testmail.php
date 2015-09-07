@@ -1,5 +1,5 @@
 <?php
-$mailto="xxxxxxxx@gmail.com";
+$mailto="raghunadh2006ster@outlook.com";
  $subject="mail test";
  $content="test";
  $result=mail($mailto, $subject, $content);
