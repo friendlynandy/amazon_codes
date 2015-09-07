@@ -9,7 +9,7 @@ function amazonSesEmail($to, $subject, $message)
     ));
  
     $response = $amazonSes->send_email('noreply@sportslion.com',
-        array('raghunadh2006ster@outlook.com' => array($to)),
+        array('ToAddresses' => array('raghunadh2006ster@outlook.com')),
         array(
             'Subject.Data' => 'HIII',
             'Body.Text.Data' => 'Tesct mail',
