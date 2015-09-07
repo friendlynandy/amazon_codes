@@ -2,7 +2,8 @@
 <?php
 
 $name = $_GET['$username'];
-
-echo json_encode($name);
+$a = array();
+$a[0]['name'] = $name;
+echo json_encode($a);
 
 ?>
