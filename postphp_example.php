@@ -2,5 +2,7 @@
 <?php
 
 $name = $_POST['$username'];
-echo $name;
+
+echo json_response($name);
+
 ?>
