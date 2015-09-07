@@ -8,8 +8,8 @@ function amazonSesEmail($to, $subject, $message)
         'secret' => '6buL85RP4UAKdBIQFnElhWJfr4Y8vLzZxcWYl1eR'
     ));
  
-    $response = $amazonSes->send_email(AWS_SES_FROM_EMAIL,
-        array('ToAddresses' => array($to)),
+    $response = $amazonSes->send_email('noreply@sportslion.com',
+        array('raghunadh2006ster@outlook.com' => array($to)),
         array(
             'Subject.Data' => $subject,
             'Body.Text.Data' => $message,
