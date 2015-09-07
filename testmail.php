@@ -17,9 +17,8 @@ function amazonSesEmail($to, $subject, $message)
     );
     if (!$response->isOK())
     {
-    
-         handle error
+       echo "error";
     }
-   
+   echo "success";
 }
 ?>
