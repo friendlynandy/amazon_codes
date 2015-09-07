@@ -1,6 +1,6 @@
 
 <?php
 
-$name = $_POST["$username"];
+$name = $_POST['$username'];
 echo $name
 ?>
