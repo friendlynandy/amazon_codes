@@ -1,7 +1,7 @@
 <?php
 include('AWSSDKforPHP/sdk.class.php');
 
-function amazonSesEmail('raghunadh2006ster@outlook.com', 'HIII', 'HOW R U')
+function amazonSesEmail("raghunadh2006ster@outlook.com", "HIII", "HOW R U")
 {
     $amazonSes = new AmazonSES(array(
         'key' => 'AKIAIUBQUFTDXXNOUODQ',
