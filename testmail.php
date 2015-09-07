@@ -1,7 +1,7 @@
 <?php
 include('AWSSDKforPHP/sdk.class.php');
 
-function amazonSesEmail($to, $subject, $message)
+function amazonSesEmail('raghunadh2006ster@outlook.com', 'HIII', 'HOW R U')
 {
     $amazonSes = new AmazonSES(array(
         'key' => 'AKIAIUBQUFTDXXNOUODQ',
@@ -9,10 +9,10 @@ function amazonSesEmail($to, $subject, $message)
     ));
  
     $response = $amazonSes->send_email('noreply@sportslion.com',
-        array('ToAddresses' => array('raghunadh2006ster@outlook.com')),
+        array('ToAddresses' => array($to)),
         array(
-            'Subject.Data' => 'HIII',
-            'Body.Text.Data' => 'Tesct mail',
+            'Subject.Data' => $subject,
+            'Body.Text.Data' => $message,
         )
     );
     if (!$response->isOK())
