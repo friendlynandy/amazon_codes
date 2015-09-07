@@ -11,8 +11,8 @@ function amazonSesEmail($to, $subject, $message)
     $response = $amazonSes->send_email('noreply@sportslion.com',
         array('raghunadh2006ster@outlook.com' => array($to)),
         array(
-            'Subject.Data' => $subject,
-            'Body.Text.Data' => $message,
+            'Subject.Data' => 'HIII',
+            'Body.Text.Data' => 'Tesct mail',
         )
     );
     if (!$response->isOK())
