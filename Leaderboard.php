@@ -20,7 +20,7 @@ left join sports d on c.sport_id = d.id
 left join users e on a.user_id=e.id
 where b.status='finished' group by a.id,a.user_id,b.gameable_id,b.bet_cost,c.sport_id,d.name,e.username,e.balance order by a.user_id) 
 as game group by username,user_id,balance order by balance desc
-) as point where amer_football_won>amer_football_lost and (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25) order by total_pts desc limit '$ranks'";
+) as point where amer_football_won>amer_football_lost and (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25) order by total_pts desc limit 10";
 }
 else if($category==389)
 {
@@ -83,7 +83,7 @@ left join sports d on c.sport_id = d.id
 left join users e on a.user_id=e.id
 where b.status='finished' group by a.id,a.user_id,b.gameable_id,b.bet_cost,c.sport_id,d.name,e.username,e.balance order by a.user_id) 
 as game group by username,user_id,balance order by balance desc
-) as point where euro_football_won>euro_football_lost and (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25) order by total_pts desc limit '10'";
+) as point where euro_football_won>euro_football_lost and (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25) order by total_pts desc limit 10";
 }
 
 else if($category==392)
@@ -105,7 +105,7 @@ left join users e on a.user_id=e.id
 where b.gameable_type = 'Competition' and c.sport_id = 2
 ) 
 as game group by username,user_id
-) as point where fgr_sktng_won>fgr_sktng_lost and (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25) order by total_pts desc limit '10'";
+) as point where fgr_sktng_won>fgr_sktng_lost and (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25) order by total_pts desc limit 10";
 }
 
 else if($category==393)
@@ -127,7 +127,7 @@ left join users e on a.user_id=e.id
 where b.status='finished' and b.gameable_type = 'Competition' and c.sport_id = 3 group by a.id,c.name,a.user_id,b.gameable_type,
 b.gameable_id,b.bet_cost,c.sport_id,d.name,e.username,e.balance order by a.user_id) 
 as game group by game.sport_id,username,user_id,balance order by balance desc
-) as point where golf_won>golf_lost and (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25) order by total_pts desc limit '10'";
+) as point where golf_won>golf_lost and (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25) order by total_pts desc limit 10";
 }
 
 else if($category==394)
@@ -147,7 +147,7 @@ left join sports d on c.sport_id = d.id
 left join users e on a.user_id = e.id
 where sport_id = 4 ) 
 as game group by username,user_id
-) as point where ice_hockey_won>ice_hockey_lost and (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25) order by total_pts desc limit '10'";
+) as point where ice_hockey_won>ice_hockey_lost and (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25) order by total_pts desc limit 10";
 }
 
 else if($category==395)
@@ -168,7 +168,7 @@ left join sports d on c.sport_id = d.id
 left join users e on a.user_id=e.id
 where b.status='finished' group by a.id,a.user_id,b.gameable_id,b.bet_cost,c.sport_id,d.name,e.username,e.balance order by a.user_id) 
 as game group by username,user_id,balance order by balance desc
-) as point where tennis_won>tennis_lost and (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25) order by total_pts desc limit '10'";
+) as point where tennis_won>tennis_lost and (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25) order by total_pts desc limit 10";
 }
 
 else if(isset($_GET['ranks']))
