@@ -41,10 +41,9 @@ while($r = pg_fetch_assoc($rank_sql))
 {
 	$rank_rows[] = $r;
 }
-$i=0;
-foreach ($rank_rows as $rank_row)
+foreach ($rank_rows as $key => $value)
 {
-	$rank_rows[$i]['rank'] = '1';
+	$rank_row[$key]['rank'] = '1';
 
 }
 echo json_encode($rank_rows);
