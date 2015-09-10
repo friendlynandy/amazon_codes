@@ -37,7 +37,7 @@ require_once('connection.php');
 $rank_sql = pg_query($dbconn3, "select username,balance from users order by balance desc");
 $num_rows = pg_numrows($rank_sql);
 $rank_rows = array();
-while($r = pg_fetch_assoc($result))
+while($r = pg_fetch_assoc($rank_sql)
 {
 	$rank_rows[] = $r;
 }
