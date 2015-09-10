@@ -6,7 +6,7 @@ $row = $_GET["id"];
 //echo $row;
 
 //printf ($row[0]);
-$result = pg_query($dbconn3, "select a.id as duel_games_id, a.main as competitable_type,a.sec as sec_compet_type, f.full_name,f.username,f.balance,f.id,j.name as competition_name,n.name as compet_name,a.bet_cost,e.name as user_team, 
+$result = pg_query($dbconn3, "select a.id as duel_games_id,p.publish_status, a.main as competitable_type,a.sec as sec_compet_type, f.full_name,f.username,f.balance,f.id,j.name as competition_name,n.name as compet_name,a.bet_cost,e.name as user_team, 
 c.name as opponent_team,a.status,o.notification_badge,g.result,h.name as team_sport,k.name as opponent_player,l.name as user_player,m.name as player_sport,CASE WHEN a.user_id ='$row' THEN 'waiting'   ELSE 'respond'
        END from
        (
@@ -34,6 +34,7 @@ left join players l on d.competitable_id = l.id
 left join sports m on l.sport_id = m.id
 left join competitions n on a.gameable_id = n.id
 left join chat_notifiers o on a.id = o.duel_games_id and o.user_id = '$row'
+left join duel_game_status p on a.id = p.duel_game_id and p.user_id = '$row'
 order by a.id desc limit 150
 ");
 
