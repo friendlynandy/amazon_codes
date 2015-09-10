@@ -47,6 +47,6 @@ foreach ($rank_rows as $rank_row)
 	$rank_row[$i]['rank'] = $i;
 	$i++;
 }
-echo json_encode($rank_row);
+echo json_encode($rank_rows);
 pg_close($dbconn3);
 ?>
