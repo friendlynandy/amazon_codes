@@ -34,7 +34,7 @@ require_once('connection.php');
 // echo json_encode($rows);
 // }
 
-$rank_sql = pg_query($dbconn3, "select id,username,full_name,balance from users where id = 11 order by balance desc");
+$rank_sql = pg_query($dbconn3, "select id,username,full_name,balance from users order by balance desc");
 $num_rows = pg_numrows($rank_sql);
 $rank_rows = array();
 while($r = pg_fetch_assoc($rank_sql))
