@@ -47,11 +47,11 @@ foreach ($rank_rows as $key => $value)
 	$rank_rows[$key]['rank'] = $i+1;
 	if ((!empty($_GET["id"])) && ($_GET["id"] == $rank_rows[$key]['id']))
 	{
-		if ($rank_rows[$key]['rank'] > $_GET('rank'))
+		if ($rank_rows[$key]['rank'] > $_GET['rank'])
 		{
 			$rank_rows[$key]['arrow'] = '0';
 		}
-		else if ($rank_rows[$key]['rank'] < $_GET('rank'))
+		else if ($rank_rows[$key]['rank'] < $_GET['rank'])
 		{
 			$rank_rows[$key]['arrow'] = '1';
 		}
