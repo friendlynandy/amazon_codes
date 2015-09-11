@@ -60,6 +60,10 @@ foreach ($rank_rows as $key => $value)
 			$rank_rows[$key]['arrow'] = 'no';
 		}
 	}
+	else
+	{
+		$rank_rows[$key]['arrow'] = 'nil';	
+	}
 	$i++;
 
 }
