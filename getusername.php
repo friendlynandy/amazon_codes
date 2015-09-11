@@ -45,7 +45,7 @@ $i=0;
 foreach ($rank_rows as $key => $value)
 {
 	$rank_rows[$key]['rank'] = $i+1;
-	if (!empty($_GET["id"]) && ($_GET["id"] == $rank_rows[$key]['id']))
+	if ((!empty($_GET["id"])) && ($_GET["id"] == $rank_rows[$key]['id']))
 	{
 		if ($rank_rows[$key]['rank'] > $_GET('rank'))
 		{
