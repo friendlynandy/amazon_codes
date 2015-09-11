@@ -44,7 +44,22 @@ while($r = pg_fetch_assoc($rank_sql))
 $i=0;
 foreach ($rank_rows as $key => $value)
 {
-	$rank_rows[$key]['rank'] = $i-50;
+	$rank_rows[$key]['rank'] = $i+1;
+	if (isset($_GET('rank')))
+	{
+		if ($rank_rows[$key]['rank'] > $_GET('rank'))
+		{
+			$rank_rows[$key]['arrow'] = 'down';
+		}
+		else if ($rank_rows[$key]['rank'] < $_GET('rank'))
+		{
+			$rank_rows[$key]['arrow'] = 'up';
+		}
+		else
+		{
+			$rank_rows[$key]['arrow'] = 'no';
+		}
+	}
 	$i++;
 
 }
