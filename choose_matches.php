@@ -6,7 +6,7 @@ $id = $_GET[id];
 // echo $end_date;
 $date = new DateTime();
 date_add($date, date_interval_create_from_date_string('1 days'));
-echo $date->format('Y-m-d H:i:s') . "\n";
+echo $date->format('Y-m-d') . "\n";
 exit;
 $result = pg_query($dbconn3, "select id,name from matches where competition_id = '$id' and end_at >= '$end_date'");
 $num = pg_numrows($result);
