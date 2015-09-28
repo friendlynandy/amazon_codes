@@ -2,7 +2,7 @@
 require_once('connection.php'); 
 $id = $_GET[id];
 $date = new DateTime();
-$end_date = date_format($date, 'Y-m-d');
+$end_date = date_format($date, 'Y-m-d H:m:s');
 echo $end_date;
 $result = pg_query($dbconn3, "select id,name from matches where competition_id = '$id' and end_at >= '$end_date'");
 $num = pg_numrows($result);
