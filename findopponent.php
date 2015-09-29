@@ -33,6 +33,7 @@ else if (($rows=="" or $rows == NULL) && $user_id == '11')
 $rows[username] = 'Mighty Sports Lion';
 $rows[user_id] = '5';
 }
-echo json_encode($rows);
+echo print_r($rows);
+//echo json_encode($rows);
 pg_close($dbconn3);
 ?>
