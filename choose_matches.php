@@ -1,9 +1,9 @@
 <?php
-$dbconn3 = pg_connect("host=ec2-79-125-7-27.eu-west-1.compute.amazonaws.com port=5552 dbname=d39ubt6siqrqmf user=u5rve30b5so8gv password=peqhcba53fc1d4qrebs5ok7b22");
+require_once('connection.php'); 
 $id = $_GET[id];
-$date = new DateTime();
-$end_date = date_format($date, 'Y-m-d');
-$result = pg_query($dbconn3, "select id,name from matches where competition_id = '$id' and end_at >= '$end_date'");
+$date = date_create();
+$date = $date->format('Y-m-d H:m:s'); 
+$result = pg_query($dbconn3, "select id,name from matches where competition_id = '$id' and start_at >= '$date' and published = 't'");
 $num = pg_numrows($result);
 pg_close();
 $rows = array();
