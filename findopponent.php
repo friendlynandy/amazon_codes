@@ -30,8 +30,8 @@ $rows[0][user_id] = '11';
 }
 else if (($rows=="" or $rows == NULL) && $user_id == '11')
 {
-$rows[username] = 'Mighty Sports Lion';
-$rows[user_id] = '5';
+$rows[0][username] = 'Mighty Sports Lion';
+$rows[0][user_id] = '5';
 }
 //echo print_r($rows);
 echo json_encode($rows);
