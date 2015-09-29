@@ -3,7 +3,7 @@ require_once('connection.php');
 $id = $_GET[id];
 $date = date_create();
 $date = $date->format('Y-m-d H:m:s'); 
-echo $date;
+//echo $date;
 $result = pg_query($dbconn3, "select * from matches where competition_id = '$id' and start_at >= '$date' and published = 't'");
 $num = pg_numrows($result);
 pg_close();
