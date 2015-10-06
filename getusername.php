@@ -44,7 +44,7 @@ while($r = pg_fetch_assoc($rank_sql))
 $i=0;
 foreach ($rank_rows as $key => $value)
 {
-	$rank_rows[$key]['rank'] = $i+104;
+	$rank_rows[$key]['rank'] = $i+10;
 
 	$i++;
 
