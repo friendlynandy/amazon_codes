@@ -174,34 +174,7 @@ as game group by username,user_id,balance order by balance desc
 else if(isset($_GET['ranks']))
 {
 $ranks = $_GET['ranks'];
-$query = "Create or replace temp view duel_games_view as 
-select id,username, sum(bet_cost) as frozen_points from ( 
-SELECT users.id,users.username,duel_games.bet_cost FROM users,duel_games where 
-(duel_games.status = 'accepted' or duel_games.status = 'pending') and (users.id=duel_games.user_id) 
-UNION ALL 
-SELECT users.id,users.username,bet_cost FROM users,duel_games where 
-(duel_games.status = 'accepted')  and 
-(users.id=duel_games.opponent_id) ORDER BY username DESC ) as t 
-group by id,username order by frozen_points desc;
-Create or replace temp view profile as select id,username, balance+frozen_points as total_pts from (
-select users.id,users.username,users.balance,(case frozen_points
- when frozen_points then frozen_points else cast (0 as numeric) end) as frozen_points
-from users left join duel_games_view on users.id = duel_games_view.id
-group by users.id,duel_games_view.frozen_points) as tab order by total_pts desc;
-Create or replace temp view percent_view as
-select user_id,total as total_bets, round(cast((won*100.0::float)/total as numeric),2) as won_percentage, 
-		round(cast((lost*100.0::float)/total as numeric),2) as lost_percentage,
-		round(cast((draw*100.0::float)/total as numeric),2) as draw_percentage
-from (
-select user_id,
-    count(*) total,
-    sum(case when result = 'won' then 1 else 0 end) as won,
-    sum(case when result = 'lost' then 1 else 0 end) as lost,
-    sum(case when result = 'draw' then 1 else 0 end)as draw
-from user_duel_games where (user_id != 5 and user_id != 11 and user_id!= 13 and user_id != 8 and user_id != 12 and user_id != 25)
-group by user_id order by total desc
-) as percen;
-select username,total_pts from percent_view, profile where percent_view.user_id=profile.id order by total_pts desc limit '$ranks'";
+$query = "select username,balance as total_pts from users order by total_pts desc limit '$ranks'";
 }
 
 
