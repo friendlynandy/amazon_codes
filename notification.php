@@ -60,7 +60,7 @@ $ctx = stream_context_create();
 
 stream_context_set_option($ctx,'ssl','local_cert','final.pem');
 
-stream_context_set_option($ctx,'ssl','passphrase','');
+stream_context_set_option($ctx,'ssl','passphrase','office');
 
 $fp = stream_socket_client('ssl://gateway.sandbox.push.apple.com:2195',$err,$errstr,60,STREAM_CLIENT_CONNECT,$ctx);
 
