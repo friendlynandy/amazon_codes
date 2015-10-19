@@ -17,7 +17,7 @@ $value1 = pg_fetch_row($result1);
 
 if($value[0]!="" || $value[0]!=NULL)
 {
-$message = "Hi,".$value1[0]." just Roared at you!";
+$message = "".$value1[0]." just Roared at you!";
 $notification = $value[1]+1;
 $payload = '{
                  "aps" :
