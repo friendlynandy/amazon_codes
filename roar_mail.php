@@ -57,9 +57,9 @@ else
 $ar1 = array("http://sportslion.production.s3-eu-west-1.amazonaws.com/users/avatars/000/000/".$opponentid ."/thumb/".$rows[0][avatar_file_name]);
 }
 
-if($opponentemail !=0)
+if(![$opponentemail == 0])
 {
-
+echo $opponentemail;
 $subject = 'Your friend Roared at you via Sports Lion!';
 $body .='<div id=":km" class="ii gt m15166eec3d85d349 adP adO"><div id=":kl" class="a3s" style="overflow: hidden;"><u></u>
 
@@ -107,6 +107,7 @@ mail($opponentemail, $subject, $body, $headers);
 }
 else
 {
+echo $opponentemail
 $email_confirmation= $result[0];
 $opponent_name = '$result1[0]';
 $subject = 'Your friend Roared at you via Sports Lion!';
