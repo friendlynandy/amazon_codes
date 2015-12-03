@@ -6,7 +6,7 @@ $usercompetitorid = $_GET["user_competitor_id"];
 $opponentcompetitorid = $_GET["opponent_competitor_id"];
 $choosecompetitionname  = $_GET["competition_name"];
 $betcost = $_GET["bet_cost"];
-
+$opponentemail = $_GET["opponent_email"];
 
 $email = pg_query($dbconn3, "select email,username from users where id = '$opponentid'");
 $username = pg_query($dbconn3,"select username from users where id = '$userid'");
@@ -57,9 +57,9 @@ else
 $ar1 = array("http://sportslion.production.s3-eu-west-1.amazonaws.com/users/avatars/000/000/".$opponentid ."/thumb/".$rows[0][avatar_file_name]);
 }
 
-if(isset($_GET["opponent_email"]))
+if($opponentemail !=0)
 {
-$opponentemail = $_GET["opponent_email"];
+
 $subject = 'Your friend Roared at you via Sports Lion!';
 $body .='<div id=":km" class="ii gt m15166eec3d85d349 adP adO"><div id=":kl" class="a3s" style="overflow: hidden;"><u></u>
 
