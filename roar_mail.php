@@ -8,7 +8,7 @@ $choosecompetitionname  = $_GET["competition_name"];
 $betcost = $_GET["bet_cost"];
 $opponentemail = $_GET["opponent_email"];
 
-$email = pg_query($dbconn3, "select email,username from users where id = '$opponentid'");
+
 $username = pg_query($dbconn3,"select username from users where id = '$userid'");
 
 $result = pg_fetch_array($email);
@@ -108,8 +108,12 @@ mail($opponentemail, $subject, $body, $headers);
 else
 {
 echo $opponentemail;
+
 $email_confirmation= $result[0];
 $opponent_name = '$result1[0]';
+$email = pg_query($dbconn3, "select email,username from users where id = '$opponentid'");
+$result = pg_fetch_array($email);
+$result1 = pg_fetch_array($username);
 $subject = 'Your friend Roared at you via Sports Lion!';
 $body .= '<div style="background:#f1f4f5;font-family:Arial;margin:0;padding:0 50px" bgcolor="#f1f4f5">
 <table align="center" width="600px" style="background:white;border-bottom-left-radius:5px;border-bottom-right-radius:5px;border-collapse:collapse;border:0" bgcolor="white">
