@@ -35,28 +35,6 @@ else
 $ar = array("http://sportslion.production.s3-eu-west-1.amazonaws.com/users/avatars/000/000/".$userid ."/thumb/".$rows[0][avatar_file_name]);
 }
 
-
-//image 2
-$result3 = pg_query($dbconn3, "select avatar_file_name from users where id= '$opponentid'");
-$rows = array();
-while($r = pg_fetch_assoc($result3))
-{
-	$rows[] = $r;
-}
-
-if (strlen($opponentid)<3)
-{
-$opponentid = str_pad($opponentid, 3, "0", STR_PAD_LEFT);
-}
-if ($rows[0][avatar_file_name]=="")
-{
-$ar1 = array("http://www.sportslion.com/assets/avatar-0b523aaf2f6e9d8aea4d6eb56c4e2db7.png");
-}
-else
-{
-$ar1 = array("http://sportslion.production.s3-eu-west-1.amazonaws.com/users/avatars/000/000/".$opponentid ."/thumb/".$rows[0][avatar_file_name]);
-}
-
 if(![$opponentemail == 0])
 {
 echo $opponentemail;
@@ -113,6 +91,27 @@ $email_confirmation= $result[0];
 $opponent_name = '$result1[0]';
 $email = pg_query($dbconn3, "select email,username from users where id = '$opponentid'");
 $result = pg_fetch_array($email);
+//image 2
+$result3 = pg_query($dbconn3, "select avatar_file_name from users where id= '$opponentid'");
+$rows = array();
+while($r = pg_fetch_assoc($result3))
+{
+	$rows[] = $r;
+}
+
+if (strlen($opponentid)<3)
+{
+$opponentid = str_pad($opponentid, 3, "0", STR_PAD_LEFT);
+}
+if ($rows[0][avatar_file_name]=="")
+{
+$ar1 = array("http://www.sportslion.com/assets/avatar-0b523aaf2f6e9d8aea4d6eb56c4e2db7.png");
+}
+else
+{
+$ar1 = array("http://sportslion.production.s3-eu-west-1.amazonaws.com/users/avatars/000/000/".$opponentid ."/thumb/".$rows[0][avatar_file_name]);
+}
+
 $subject = 'Your friend Roared at you via Sports Lion!';
 $body .= '<div style="background:#f1f4f5;font-family:Arial;margin:0;padding:0 50px" bgcolor="#f1f4f5">
 <table align="center" width="600px" style="background:white;border-bottom-left-radius:5px;border-bottom-right-radius:5px;border-collapse:collapse;border:0" bgcolor="white">
