@@ -7,7 +7,7 @@ $row = $_GET["id"];
 
 //printf ($row[0]);
 $result = pg_query($dbconn3, "select a.id as duel_games_id,a.opponent_email,p.publish_status, a.main as competitable_type,a.sec as sec_compet_type, f.full_name,f.username,f.balance,f.id,j.name as competition_name,n.name as compet_name,a.bet_cost,e.name as user_team, 
-c.name as opponent_team,a.status,o.notification_badge,g.result,h.name as team_sport,k.name as opponent_player,l.name as user_player,m.name as player_sport,CASE WHEN a.user_id ='270' THEN 'waiting'   ELSE 'respond'
+c.name as opponent_team,a.status,o.notification_badge,g.result,h.name as team_sport,k.name as opponent_player,l.name as user_player,m.name as player_sport,CASE WHEN a.user_id ='$row' THEN 'waiting'   ELSE 'respond'
        END from
        (
 select * from (SELECT b.competitable_type as main,a.opponent_email,c.competitable_type as sec,a.id, a.user_id,a.gameable_id, a.opponent_id,a.bet_cost,a.user_competitor_id,a.opponent_competitor_id,a.status FROM
