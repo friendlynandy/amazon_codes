@@ -1,6 +1,5 @@
 <?php
 require_once('connection.php');
-$opponentid = $_GET["opponent_id"];
 $userid = $_GET["user_id"];
 $usercompetitorid = $_GET["user_competitor_id"];
 $opponentcompetitorid = $_GET["opponent_competitor_id"];
@@ -85,8 +84,7 @@ mail($opponentemail, $subject, $body, $headers);
 }
 else
 {
-echo $opponentemail;
-
+$opponentid = $_GET["opponent_id"];
 $email_confirmation= $result[0];
 $opponent_name = '$result1[0]';
 $email = pg_query($dbconn3, "select email,username from users where id = '$opponentid'");
