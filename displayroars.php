@@ -18,7 +18,7 @@ UNION ALL
 SELECT b.competitable_type,a.opponent_email,c.competitable_type,a.id, a.user_id,a.gameable_id, a.user_id,a.bet_cost,a.opponent_competitor_id,a.user_competitor_id,a.status FROM duel_games a 
 left join competitors b on a.user_competitor_id = b.id 
 left join competitors c on a.opponent_competitor_id = c.id 
- where opponent_id = '270') as list order by list.id desc
+ where opponent_id = '$row') as list order by list.id desc
 ) as a
 left join competitors b on a.opponent_competitor_id = b.id
 left join teams c on b.competitable_id = c.id
