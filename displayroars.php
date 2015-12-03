@@ -50,19 +50,19 @@ foreach ($rows as $key => $value)
 {
 		if ($rows[$key][username]=="" && $rows[$key][full_name]=="")
 		{
-		$rows[$key][username]=$rows[$key][opponent_email];
+		$rows[$key][full_name]=$rows[$key][opponent_email];
 		}
 		else if ($rows[$key][username]=="" && $rows[$key][full_name]!="")
 		{
-		$rows[$key][username]=$rows[$key][full_name];
+		$rows[$key][full_name]=$rows[$key][full_name];
 		}
 		else if ($rows[$key][username]!="" && $rows[$key][full_name]=="")
 		{
-		$rows[$key][username]=$rows[$key][username];
+		$rows[$key][full_name]=$rows[$key][username];
 		}
 		else
 		{
-		$rows[$key][username]="?";	
+		$rows[$key][full_name]="?";	
 		}
 		
 
