@@ -48,11 +48,7 @@ while($r = pg_fetch_assoc($result))
 }
 foreach ($rows as $key => $value) 
 {
-		if ($rows[$key][username]=="" && $rows[$key][opponent_email]!="")
-		{
-		$rows[$key][username]=$rows[$key][opponent_email];
-		}
-		else
+		if ($rows[$key][username]=="")
 		{
 		$rows[$key][username]="?";
 		}
@@ -61,8 +57,6 @@ foreach ($rows as $key => $value)
 		{
 		$rows[$key][full_name]="?";
 		}
-		
-		
 		if ($rows[$key][competitable_type]=="")
 		{
 		$rows[$key][competitable_type]="?";
