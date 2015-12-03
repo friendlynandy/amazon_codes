@@ -34,7 +34,7 @@ else
 $ar = array("http://sportslion.production.s3-eu-west-1.amazonaws.com/users/avatars/000/000/".$userid ."/thumb/".$rows[0][avatar_file_name]);
 }
 
-if(!(isset($opponentemail)))
+if(isset($opponentemail))
 {
 echo $opponentemail;
 $subject = 'Your friend Roared at you via Sports Lion!';
