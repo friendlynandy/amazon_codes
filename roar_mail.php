@@ -107,7 +107,7 @@ mail($opponentemail, $subject, $body, $headers);
 }
 else
 {
-echo $opponentemail
+echo $opponentemail;
 $email_confirmation= $result[0];
 $opponent_name = '$result1[0]';
 $subject = 'Your friend Roared at you via Sports Lion!';
