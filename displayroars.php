@@ -6,19 +6,19 @@ $row = $_GET["id"];
 //echo $row;
 
 //printf ($row[0]);
-$result = pg_query($dbconn3, "select a.id as duel_games_id,p.publish_status, a.main as competitable_type,a.sec as sec_compet_type, f.full_name,f.username,f.balance,f.id,j.name as competition_name,n.name as compet_name,a.bet_cost,e.name as user_team, 
-c.name as opponent_team,a.status,o.notification_badge,g.result,h.name as team_sport,k.name as opponent_player,l.name as user_player,m.name as player_sport,CASE WHEN a.user_id ='$row' THEN 'waiting'   ELSE 'respond'
+$result = pg_query($dbconn3, "select a.id as duel_games_id,a.opponent_email,p.publish_status, a.main as competitable_type,a.sec as sec_compet_type, f.full_name,f.username,f.balance,f.id,j.name as competition_name,n.name as compet_name,a.bet_cost,e.name as user_team, 
+c.name as opponent_team,a.status,o.notification_badge,g.result,h.name as team_sport,k.name as opponent_player,l.name as user_player,m.name as player_sport,CASE WHEN a.user_id ='270' THEN 'waiting'   ELSE 'respond'
        END from
        (
-select * from (SELECT b.competitable_type as main,c.competitable_type as sec,a.id, a.user_id,a.gameable_id, a.opponent_id,a.bet_cost,a.user_competitor_id,a.opponent_competitor_id,a.status FROM
+select * from (SELECT b.competitable_type as main,a.opponent_email,c.competitable_type as sec,a.id, a.user_id,a.gameable_id, a.opponent_id,a.bet_cost,a.user_competitor_id,a.opponent_competitor_id,a.status FROM
  duel_games a 
  left join competitors b on a.opponent_competitor_id = b.id
  left join competitors c on a.user_competitor_id = c.id where user_id = '$row'
 UNION ALL
-SELECT b.competitable_type,c.competitable_type,a.id, a.user_id,a.gameable_id, a.user_id,a.bet_cost,a.opponent_competitor_id,a.user_competitor_id,a.status FROM duel_games a 
+SELECT b.competitable_type,a.opponent_email,c.competitable_type,a.id, a.user_id,a.gameable_id, a.user_id,a.bet_cost,a.opponent_competitor_id,a.user_competitor_id,a.status FROM duel_games a 
 left join competitors b on a.user_competitor_id = b.id 
 left join competitors c on a.opponent_competitor_id = c.id 
- where opponent_id = '$row') as list order by list.id desc
+ where opponent_id = '270') as list order by list.id desc
 ) as a
 left join competitors b on a.opponent_competitor_id = b.id
 left join teams c on b.competitable_id = c.id
@@ -48,7 +48,11 @@ while($r = pg_fetch_assoc($result))
 }
 foreach ($rows as $key => $value) 
 {
-		if ($rows[$key][username]=="")
+		if ($rows[$key][username]=="" && $rows[$key][opponent_email]!="")
+		{
+		$rows[$key][username]=$rows[$key][opponent_email];
+		}
+		else
 		{
 		$rows[$key][username]="?";
 		}
