@@ -88,7 +88,7 @@ $body .='<div id=":km" class="ii gt m15166eec3d85d349 adP adO"><div id=":kl" cla
 <div style="font-size:30px"><b>1</b></div>
 <div style="font-size:12px;text-transform:uppercase">lion points</div>
 </td>
-<td style="color:#c1c8cc;font-size:12px;padding:5px 0 0;text-align:center;vertical-align:top" align="center" valign="top">raghunadh2006's Roar</td>
+<td style="color:#c1c8cc;font-size:12px;padding:5px 0 0;text-align:center;vertical-align:top" align="center" valign="top">'.$result1[0].'\'s <span class="il">Roar</span></td>
 </tr>
 </tbody></table></td></tr>
 <tr><td style="padding:0 50px;text-align:center" align="center"><p style="color:#7f8c8d;font-size:16px;line-height:140%;margin:0 0 20px">Do you accept the Roar? Press the button below and...</p></td></tr>
