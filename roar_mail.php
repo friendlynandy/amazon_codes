@@ -84,7 +84,9 @@ mail($opponentemail, $subject, $body, $headers);
 }
 else
 {
+	
 $opponentid = $_GET["opponent_id"];
+echo $opponentid;
 $email_confirmation= $result[0];
 $opponent_name = '$result1[0]';
 $email = pg_query($dbconn3, "select email,username from users where id = '$opponentid'");
