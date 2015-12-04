@@ -47,11 +47,11 @@ $body .='<div id=":km" class="ii gt m15166eec3d85d349 adP adO"><div id=":kl" cla
 <tr><td style="padding:0 50px;text-align:center" align="center"><h1 style="color:#2c3e50;font-size:24px;font-weight:normal;margin:0px auto 20px">Grrreetings!</h1></td></tr>
 <tr><td style="padding:0 50px;text-align:center" align="center"><p style="color:#7f8c8d;font-size:16px;line-height:140%;margin:0 0 20px">Your friend <b>'.$result1[0].'</b> just Roared at you via Sports Lion.Sports Lion is a social sports gaming platform where you can Roar against other sports lovers and win prizes. To respond to your friend’s Roar, please create an account by following the button below. It’s completely free!</p></td></tr>
 <tr><td style="padding:0 50px;text-align:center" align="center"><table align="center" width="500px">
-<tbody><tr><td colspan="3" style="color:#3498db;padding:0;text-align:center;vertical-align:bottom" align="center" valign="bottom">English Premier League</td></tr>
+<tbody><tr><td colspan="3" style="color:#3498db;padding:0;text-align:center;vertical-align:bottom" align="center" valign="bottom">'.$choosecompetitionname.'</td></tr>
 <tr>
-<td style="color:#3498db;font-size:20px;padding:0 0 10px;text-align:center;vertical-align:bottom;width:150px" align="center" valign="bottom">Bournemouth</td>
+<td style="color:#3498db;font-size:20px;padding:0 0 10px;text-align:center;vertical-align:bottom;width:150px" align="center" valign="bottom">'.$opponentcompetitorid.'</td>
 <td style="padding:0;text-align:center;vertical-align:bottom;width:200px" align="center" valign="bottom"></td>
-<td style="color:#3498db;font-size:20px;padding:0 0 10px;text-align:center;vertical-align:bottom;width:150px" align="center" valign="bottom">Chelsea</td>
+<td style="color:#3498db;font-size:20px;padding:0 0 10px;text-align:center;vertical-align:bottom;width:150px" align="center" valign="bottom">'.$usercompetitorid.'</td>
 </tr>
 <tr>
 <td style="padding:0;text-align:center;vertical-align:middle" align="center" valign="middle"><img alt="avatar" height="60" src="https://ci5.googleusercontent.com/proxy/3o59ArPixdtJIkR-OvcqgxLKNxpykhClEfHmjgIdf6x6pq-DsOjAQXpIGhVDx-6ylDpl6IYg_eYs6UW-J8R7YFIc-EYlLQn7YvWXKQUGZqrOVrkjdvNqsB04XK00ugm1qZQ=s0-d-e1-ft#http://www.sportslion.com/assets/avatar-0b523aaf2f6e9d8aea4d6eb56c4e2db7.png" width="60" style="border-radius:3px;min-height:60px;width:60px" class="CToWUd"></td>
