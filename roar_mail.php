@@ -87,10 +87,11 @@ else
 	
 $opponentid = $_GET["opponent_id"];
 echo $opponentid;
-$email_confirmation= $result[0];
+
 $opponent_name = '$result1[0]';
 $email = pg_query($dbconn3, "select email,username from users where id = '$opponentid'");
 $result = pg_fetch_array($email);
+$email_confirmation= $result[0];
 //image 2
 $result3 = pg_query($dbconn3, "select avatar_file_name from users where id= '$opponentid'");
 $rows = array();
