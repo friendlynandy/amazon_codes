@@ -61,8 +61,8 @@ $body .='<div id=":km" class="ii gt m15166eec3d85d349 adP adO"><div id=":kl" cla
 <tr>
 <td style="color:#c1c8cc;font-size:12px;padding:5px 0 0;text-align:center;vertical-align:top" align="center" valign="top">Your Roar</td>
 <td style="color:#7f8c8d;padding:0 0 30px;text-align:center;vertical-align:top" align="center" valign="top">
-<div style="font-size:18px">'.$betcost.' </div>
-<div style="font-size:30px"><b>1</b></div>
+<div style="font-size:18px"><span class="il">Roar</span> fee: </div>
+<div style="font-size:30px"><b>'.$betcost.'</b></div>
 <div style="font-size:12px;text-transform:uppercase">lion points</div>
 </td>
 <td style="color:#c1c8cc;font-size:12px;padding:5px 0 0;text-align:center;vertical-align:top" align="center" valign="top">'.$result1[0].'\'s <span class="il">Roar</span></td>
