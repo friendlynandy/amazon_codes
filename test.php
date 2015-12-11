@@ -1,10 +1,5 @@
-
 <?php
+$arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
 
-$name = "raghu";
-$email = "dddddd";
-$location = "Bangalore";
-
-
-
+echo json_encode($arr);
 ?>
