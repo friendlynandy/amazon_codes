@@ -1,7 +1,7 @@
 <?php
 $name = "Raghu";
 $place = "Bangalore";
-$array = ($name,$place);
-echo json_encode($array);
-
+foreach( $name as $key => $n ) {
+  print "The name is ".$n." and email is ".$email[$key].", thank you\n";
+}
 ?>
