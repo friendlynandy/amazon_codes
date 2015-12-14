@@ -36,7 +36,7 @@ left join competitions n on a.gameable_id = n.id
 left join chat_notifiers o on a.id = o.duel_games_id and o.user_id = '$row'
 left join duel_game_status p on a.id = p.duel_game_id and p.user_id = '$row'
 where p.publish_status is null 
-order by a.id
+order by a.id by desc
 ");
 
 $num = pg_numrows($result);
