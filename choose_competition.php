@@ -3,7 +3,7 @@ require_once('connection.php');
 $id = $_GET[id];
 $date = new DateTime();
 $end_date = date_format($date, 'Y-m-d');
-$result = pg_query($dbconn3, "select id,name,start_at from competitions where published_result = 'f' and published = 't' and sport_id = '$id' and end_at >= '$end_date'");
+$result = pg_query($dbconn3, "select id,name from competitions where published_result = 'f' and published = 't' and sport_id = '$id' and end_at >= '$end_date'");
 $num = pg_numrows($result);
 pg_close();
 $rows = array();
