@@ -48,6 +48,7 @@ while($r = pg_fetch_assoc($result))
 }
 foreach ($rows as $key => $value) 
 {
+		$rows[$key][bet_cost]=$rows[$key][bet_cost]."$";
 		if ($rows[$key][username]==null && $rows[$key][full_name]==null)
 		{
 		$rows[$key][full_name]=$rows[$key][opponent_email];
