@@ -55,10 +55,10 @@ echo $balance . "<br />";
 // $timestamp = $d->format("Y-m-d H:i:s.u"); 
 // echo $timestamp;
 
-$time = time();
-$check = $time+date("Z",$time);
-echo strftime("%B %d, %Y @ %H:%M:%S GMT", $check);
+date_default_timezone_set('Europe/Lisbon');
+$tz = date_default_timezone_get();
 
+echo $tz;
 
 //$time = gmmktime();
 //echo date("Y-m-d H:i:s", $time); 
