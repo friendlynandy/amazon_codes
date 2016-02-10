@@ -1,5 +1,5 @@
 <?php
-
+/*
 $gameable_id = $_GET["gameable_id"];
 $gameable_type = $_GET["gameable_type"];
 $bet_cost = $_GET["bet_cost"];
@@ -21,6 +21,9 @@ $respond_balance = $_GET["respond_balance"];
 $respond_userid = $_GET["respond_userid"];
 $respond_status = $_GET["respond_status"];
 $respond_gameid =  $_GET["respond_gameid"];
+*/
+
+
 /*
 echo $oppbalance . "<br />";
 echo $opponent_id . "<br />";
@@ -51,8 +54,9 @@ $t = microtime(true);
 $micro = sprintf("%06d",($t - floor($t)) * 1000000);
 $d = new DateTime( date('Y-m-d H:i:s.'.$micro, $t) );
 $timestamp = $d->format("Y-m-d H:i:s.u UTC"); 
+echo $timestamp;
+/*
 require_once('connection.php');
-
 if(isset($_GET["invitebyemail"]))
 {
 $opponent_invitebyemail = $_GET["invitebyemail"];
@@ -95,4 +99,5 @@ while($r = pg_fetch_assoc($affected))
 echo json_encode($rows);
 */
 pg_close($dbconn3);
+*/
 ?>
