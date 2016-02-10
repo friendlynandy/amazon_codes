@@ -97,7 +97,6 @@ while($r = pg_fetch_assoc($affected))
 	$rows[] = $r;
 }
 echo json_encode($rows);
-*/
 pg_close($dbconn3);
 */
 ?>
