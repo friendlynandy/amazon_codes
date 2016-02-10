@@ -55,7 +55,10 @@ echo $balance . "<br />";
 // $timestamp = $d->format("Y-m-d H:i:s.u"); 
 // echo $timestamp;
 
-print gmdate("Y-m-d\TH:i:s\Z"); 
+$time = time();
+$check = $time+date("Z",$time);
+echo strftime("%B %d, %Y @ %H:%M:%S UTC", $check);
+
 
 //$time = gmmktime();
 //echo date("Y-m-d H:i:s", $time); 
