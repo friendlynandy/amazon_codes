@@ -53,18 +53,11 @@ $t = microtime(true);
 $micro = sprintf("%06d",($t - floor($t)) * 1000000);
 $d = new DateTime( date('Y-m-d H:i:s.'.$micro, $t) );
 $timestamp = $d->format("Y-m-d H:i:s.u"); 
-echo $timestamp;
-
 
 // Prints the day, date, month, year, time, AM or PM
 //echo gmdate("Y-m-d H:i:s.u") . "<br>";
-
-
-
-
 //$time = gmmktime();
 //echo date("Y-m-d H:i:s", $time); 
-
 
 require_once('connection.php');
 if(isset($_GET["invitebyemail"]))
