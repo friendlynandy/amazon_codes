@@ -1,5 +1,5 @@
 <?php
-/*
+
 $gameable_id = $_GET["gameable_id"];
 $gameable_type = $_GET["gameable_type"];
 $bet_cost = $_GET["bet_cost"];
@@ -21,7 +21,7 @@ $respond_balance = $_GET["respond_balance"];
 $respond_userid = $_GET["respond_userid"];
 $respond_status = $_GET["respond_status"];
 $respond_gameid =  $_GET["respond_gameid"];
-*/
+
 
 
 /*
@@ -49,15 +49,15 @@ echo $publish . "<br />";
 echo $balance . "<br />";
 */
 
-// $t = microtime(true);
-// $micro = sprintf("%06d",($t - floor($t)) * 1000000);
-// $d = new DateTime( date('Y-m-d H:i:s.'.$micro, $t) );
-// $timestamp = $d->format("Y-m-d H:i:s.u"); 
-// echo $timestamp;
+$t = microtime(true);
+$micro = sprintf("%06d",($t - floor($t)) * 1000000);
+$d = new DateTime( date('Y-m-d H:i:s.'.$micro, $t) );
+$timestamp = $d->format("Y-m-d H:i:s.u"); 
+echo $timestamp;
 
 
 // Prints the day, date, month, year, time, AM or PM
-echo gmdate("Y-m-d H:i:s.u") . "<br>";
+//echo gmdate("Y-m-d H:i:s.u") . "<br>";
 
 
 
@@ -65,7 +65,7 @@ echo gmdate("Y-m-d H:i:s.u") . "<br>";
 //$time = gmmktime();
 //echo date("Y-m-d H:i:s", $time); 
 
-/*
+
 require_once('connection.php');
 if(isset($_GET["invitebyemail"]))
 {
@@ -89,7 +89,6 @@ pg_query($dbconn3,"update duel_games set status = '$oppstatus',updated_at='$time
 //respond
 pg_query($dbconn3,"update users set balance = '$respond_balance', updated_at='$timestamp' where id = '$respond_userid'");
 pg_query($dbconn3,"update duel_games set status = '$respond_status',updated_at='$timestamp' where id = '$respond_gameid'");
-
 /*
 $rows =  pg_affected_rows ($result);
 if($rows = 1)
@@ -107,6 +106,6 @@ while($r = pg_fetch_assoc($affected))
 	$rows[] = $r;
 }
 echo json_encode($rows);
-pg_close($dbconn3);
 */
+pg_close($dbconn3);
 ?>
