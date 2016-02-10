@@ -50,11 +50,9 @@ echo $balance . "<br />";
 */
 
 
-$t = microtime(true);
-$micro = sprintf("%06d",($t - floor($t)) * 1000000);
-$d = new DateTime( date('Y-m-d H:i:s.'.$micro, $t) );
-$timestamp = $d->format("Y-m-d H:i:s.u "); 
-echo $timestamp;
+$time = time();
+$check = $time+date("Z",$time);
+echo strftime("%B %d, %Y @ %H:%M:%S UTC", $check);
 /*
 require_once('connection.php');
 if(isset($_GET["invitebyemail"]))
