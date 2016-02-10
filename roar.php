@@ -57,7 +57,7 @@ echo $balance . "<br />";
 
 $time = time();
 $check = $time+date("Z",$time);
-echo strftime("%B %d, %Y @ %H:%M:%S UTC", $check);
+echo strftime("%B %d, %Y @ %H:%M:%S GMT", $check);
 
 
 //$time = gmmktime();
