@@ -55,7 +55,7 @@ echo $balance . "<br />";
 // $timestamp = $d->format("Y-m-d H:i:s.u"); 
 // echo $timestamp;
 
-date_default_timezone_set('Europe/Lisbon');
+date_default_timezone_set('UTC');
 $tz = date_default_timezone_get();
 $t = microtime(true);
 $micro = sprintf("%06d",($t - floor($t)) * 1000000);
