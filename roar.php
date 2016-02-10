@@ -48,12 +48,14 @@ echo $opponent_competitor_id . "<br />";
 echo $publish . "<br />";
 echo $balance . "<br />";
 */
-date_default_timezone_set("UTC");
-$t = microtime(true);
-$micro = sprintf("%06d",($t - floor($t)) * 1000000);
-$d = new DateTime( date('Y-m-d H:i:s.'.$micro, $t) );
-$timestamp = $d->format("Y-m-d H:i:s.u"); 
-echo $timestamp;
+
+// $t = microtime(true);
+// $micro = sprintf("%06d",($t - floor($t)) * 1000000);
+// $d = new DateTime( date('Y-m-d H:i:s.'.$micro, $t) );
+// $timestamp = $d->format("Y-m-d H:i:s.u"); 
+// echo $timestamp;
+
+print gmdate("Y-m-d\TH:i:s\Z"); 
 
 //$time = gmmktime();
 //echo date("Y-m-d H:i:s", $time); 
