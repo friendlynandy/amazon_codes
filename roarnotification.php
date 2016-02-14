@@ -52,7 +52,7 @@ else
    print "Notification sent";
 }
 
-	$deviceToken = $value[0];
+   $deviceToken = $rows[0][ios_token_id];
    $msg = chr (0) . pack("n",32) . pack('H*', str_replace(' ', '', $deviceToken)) . pack("n",strlen($payload)) . $payload;
    print "sending message :" . $payload . "n";
    fwrite($fp, $msg);
