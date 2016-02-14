@@ -18,7 +18,6 @@ while($r = pg_fetch_assoc($result))
 {
 	$rows[] = $r;
 }
-echo $rows[0][ios_token_id];
 print_r ($rows);
 
 // print_r ($value[0]);
