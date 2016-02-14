@@ -18,6 +18,9 @@ while($r = pg_fetch_assoc($result))
 {
 	$rows[] = $r;
 }
+
+print_r ($rows);
+/*
 // print_r ($value[0]);
 
 // print_r ($value1[0]);
@@ -59,7 +62,7 @@ else
 }
 fclose($fp);
 pg_close($dbconn3);
-
+*/
 ?>
 
 
