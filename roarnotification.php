@@ -10,11 +10,19 @@ $result = pg_query($dbconn3,"select ios_token_id,ios_notification_badge from pus
 $result1 = pg_query($dbconn3,"select username from users where id = '$userid'");
 
 
-$value = pg_fetch_row($result);
-// print_r ($value[0]);
+$value = pg_numrows($result);
 $value1 = pg_fetch_row($result1);
-// print_r ($value1[0]);
+echo $value;
+$rows = array();
+while($r = pg_fetch_assoc($result))
+{
+	$rows[] = $r;
+}
+// print_r ($value[0]);
 
+// print_r ($value1[0]);
+foreach ($rows as $key => $value) 
+{
 if($value[0]!="" || $value[0]!=NULL)
 {
 $message = "".$value1[0]." just Roared at you!";
@@ -48,8 +56,10 @@ else
 
   $result2 = pg_query($dbconn3,"update push_notifiers set ios_notification_badge = '$notification' where ios_token_id = '$deviceToken'");
  }
+}
 fclose($fp);
 pg_close($dbconn3);
+
 ?>
 
 
