@@ -18,13 +18,13 @@ while($r = pg_fetch_assoc($result))
 {
 	$rows[] = $r;
 }
-
+echo $rows[0][ios_token_id];
 print_r ($rows);
-/*
+
 // print_r ($value[0]);
 
 // print_r ($value1[0]);
-foreach ($rows as $key => $value) 
+foreach ($rows as $key => $value3) 
 {
 if($value[0]!="" || $value[0]!=NULL)
 {
@@ -62,7 +62,7 @@ else
 }
 fclose($fp);
 pg_close($dbconn3);
-*/
+
 ?>
 
 
