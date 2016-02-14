@@ -12,14 +12,11 @@ $result1 = pg_query($dbconn3,"select username from users where id = '$userid'");
 
 $value = pg_numrows($result);
 $value1 = pg_fetch_row($result1);
-echo $value;
 $rows = array();
 while($r = pg_fetch_assoc($result))
 {
 	$rows[] = $r;
 }
-print_r ($rows);
-
 // print_r ($value[0]);
 
 // print_r ($value1[0]);
