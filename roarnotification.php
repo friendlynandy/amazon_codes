@@ -25,7 +25,7 @@ foreach ($rows as $key => $value3)
 if($rows[0][ios_token_id]!="" || $rows[0][ios_token_id]!=NULL)
 {
 $message = "".$value1[0]." just Roared at you!";
-$notification = $value[1]+1;
+$notification = $rows[0][ios_notification_badge]+1;
 $payload = '{
                  "aps" :
                  
