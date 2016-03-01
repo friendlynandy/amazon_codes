@@ -1,6 +1,6 @@
 <?php
 require_once('connection.php');
-$result = pg_query($dbconn3,"select a.name,a.id from competitions a left join tournaments b on a.id=b.competition_id where b.publish_tournament=true");
+$result = pg_query($dbconn3,"select  name,sport_id from competitions where tournament_publish = 't'");
 while($r = pg_fetch_assoc($result))
 {
 	$rows[] = $r;
