@@ -9,5 +9,7 @@ while($r = pg_fetch_assoc($result))
 {
 	$rows[] = $r;
 }
-echo json_encode($rows);
+var_dump($rows);
+print_r($rows);
+//echo json_encode($rows);
 ?>
