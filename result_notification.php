@@ -28,20 +28,37 @@ foreach ($rows as $key => $value)
 			{
 				if($rows1!=NULL)
 					{
-					   echo "Key: $key1;user_id: $value1[user_id]; ios_token: $value1[ios_token_id]<br />\n";	
+					   echo "Key: $key1;user_id: $value1[user_id]; ios_token: $value1[ios_token_id]<br />\n";
+						$message = "Results of ".$value[name]." has been published, Check if you have won!";
+						$notification = $value1[ios_notification_badge]+1;
+						$payload = '{
+						                 "aps" :
+						                 
+						                        {  "alert" : "'.$message.'",
+						                           "badge" : '.$notification.',
+						                           "sound" : "default"
+						                        }
+						            }';
+						$ctx = stream_context_create();
+						stream_context_set_option($ctx,'ssl','local_cert','finalsportslionproduction.pem');
+						stream_context_set_option($ctx,'ssl','passphrase','');
+						$fp = stream_socket_client('ssl://gateway.push.apple.com:2195',$err,$errstr,60,STREAM_CLIENT_CONNECT,$ctx);
+						if(!$fp)
+						{
+						    print "Failed to connect $err $errstrn";
+						    return;
+						}
+						else
+						{
+						   print "Notification sent";
+						}
+						   $deviceToken = $value1[ios_token_id];
+						   $msg = chr (0) . pack("n",32) . pack('H*', str_replace(' ', '', $deviceToken)) . pack("n",strlen($payload)) . $payload;
+						   print "sending message :" . $payload . "n";
+						   fwrite($fp, $msg);
 					}
 			}
 		}
 }
-
-    
-
-// foreach ($rows as $key => $value1) 
-// {
-// 	if($rows!=NULL)
-// 		{
-// 			echo $rows[$value1][id];
-// 		}
-// }
 
 ?>
