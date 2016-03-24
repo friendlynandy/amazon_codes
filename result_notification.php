@@ -11,7 +11,7 @@ while($r = pg_fetch_assoc($result))
 
 foreach ($rows as $key => $value1) 
 {
-	if($rows[0][]!="")
+	if($rows!=NULL)
 		{
 			var_dump($rows);
 		}
