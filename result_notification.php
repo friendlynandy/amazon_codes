@@ -12,7 +12,7 @@ foreach ($rows as $key => $value)
 {
 	if($rows!=NULL)
 		{
-			echo "Key: $key; Value: $value[name]<br />\n";
+		//	echo "Key: $key; Value: $value[name]<br />\n";
 			$result1 = pg_query($dbconn3,"select a.user_id, b.ios_token_id,b.ios_notification_badge from (
 				select user_id from duel_games where gameable_id = '$value[id]' and gameable_type = 'Match' and status = 'finished'
 				union
@@ -28,7 +28,7 @@ foreach ($rows as $key => $value)
 			{
 				if($rows1!=NULL)
 					{
-					   echo "Key: $key1;user_id: $value1[user_id]; ios_token: $value1[ios_token_id]<br />\n";
+					   //echo "Key: $key1;user_id: $value1[user_id]; ios_token: $value1[ios_token_id]<br />\n";
 						$message = "Results of ".$value[name]." has been published, Check if you have won!";
 						$notification = $value1[ios_notification_badge]+1;
 						$payload = '{
