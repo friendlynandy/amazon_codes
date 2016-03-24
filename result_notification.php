@@ -8,7 +8,9 @@ while($r = pg_fetch_assoc($result))
 	$rows[] = $r;
 }
 
-print_r($rows);
+echo "<pre>";
+var_dump($rows);
+echo "</pre>";
 
 // print_r ($value[0]);
 // print_r ($value1[0]);
