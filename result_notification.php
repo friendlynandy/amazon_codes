@@ -9,7 +9,7 @@ while($r = pg_fetch_assoc($result))
 }
 
 foreach ($rows as $key => $value) {
-    echo "Key: $key; Value: $value<br />\n";
+    echo "Key: $key; Value: $value[id]<br />\n";
 }
 
 // foreach ($rows as $key => $value1) 
