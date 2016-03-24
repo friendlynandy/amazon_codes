@@ -26,7 +26,7 @@ foreach ($rows as $key => $value)
 			}
 			foreach ($rows1 as $key1 => $value1) 
 			{
-				if($rows1!=NULL)
+				if($value1[ios_token_id]!= NULL)
 					{
 					   //echo "Key: $key1;user_id: $value1[user_id]; ios_token: $value1[ios_token_id]<br />\n";
 						$message = "Results of ".$value[name]." has been published, Check if you have won!";
