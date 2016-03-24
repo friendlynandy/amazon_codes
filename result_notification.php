@@ -8,17 +8,13 @@ while($r = pg_fetch_assoc($result))
 	$rows[] = $r;
 }
 
-echo $rows[0][id];
 
-// echo "<pre>";
-// var_dump($rows);
-// echo "</pre>";
+foreach ($rows as $key => $value1) 
+{
+	if($rows[0][]!="" || $rows[0][ios_token_id]!=NULL)
+		{
+			echo $value[0];
+		}
+}
 
-// foreach ($rows as $key => $value1) 
-// {
-// if($rows[0][]!="" || $rows[0][ios_token_id]!=NULL)
-// {
-// print_r ($value[0]);
-// print_r ($value1[0]);
-//foreach ($rows as $key => $value3) 
 ?>
