@@ -8,13 +8,16 @@ while($r = pg_fetch_assoc($result))
 	$rows[] = $r;
 }
 
-
-foreach ($rows as $key => $value1) 
-{
-	if($rows!=NULL)
-		{
-			echo $rows[$value1][id];
-		}
+foreach ($rows as $key => $value) {
+    echo "Key: $key; Value: $value<br />\n";
 }
+
+// foreach ($rows as $key => $value1) 
+// {
+// 	if($rows!=NULL)
+// 		{
+// 			echo $rows[$value1][id];
+// 		}
+// }
 
 ?>
