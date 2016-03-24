@@ -13,7 +13,7 @@ foreach ($rows as $key => $value1)
 {
 	if($rows!=NULL)
 		{
-			var_dump($rows);
+			echo $rows[$value1][id];
 		}
 }
 
