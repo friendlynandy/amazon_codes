@@ -28,7 +28,7 @@ foreach ($rows as $key => $value)
 			{
 				if($rows1!=NULL)
 					{
-					   echo "Key: $key1; Value: $value1[ios_token_id]<br />\n";	
+					   echo "Key: $key1;user_id: $value1[user_id]; ios_token: $value1[ios_token_id]<br />\n";	
 					}
 			}
 		}
