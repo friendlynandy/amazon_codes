@@ -1,6 +1,6 @@
 <?php
-require_once('connection.php');
-$result = pg_query($dbconn3,"select id from matches where updated_at >= '2016-03-23' and published_result = 't' and published_result_notification = 'f'");
+require('connection.php');
+$result = pg_query($dbconn3,"select id,name from matches where updated_at >= '2016-03-23' and published_result = 't' and published_result_notification = 'f'");
 $value = pg_numrows($result);
 $rows = array();
 while($r = pg_fetch_assoc($result))
@@ -8,9 +8,24 @@ while($r = pg_fetch_assoc($result))
 	$rows[] = $r;
 }
 
-foreach ($rows as $key => $value) {
-    echo "Key: $key; Value: $value[id]<br />\n";
+foreach ($rows as $key => $value) 
+{
+	if($rows!=NULL)
+		{
+		echo "Key: $key; Value: $value[id]<br />\n";
+		echo "Key: $key; Value: $value[name]<br />\n";
+		// $result = pg_query($dbconn3,"select id from matches where updated_at >= '2016-03-23' and published_result = 't' and published_result_notification = 'f'");
+		// $value = pg_numrows($result);
+		// $rows = array();
+		// while($r = pg_fetch_assoc($result))
+		// {
+		// 	$rows[] = $r;
+		// }
+		
+		}
 }
+
+    
 
 // foreach ($rows as $key => $value1) 
 // {
