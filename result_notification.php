@@ -56,9 +56,14 @@ foreach ($rows as $key => $value)
 						   $msg = chr (0) . pack("n",32) . pack('H*', str_replace(' ', '', $deviceToken)) . pack("n",strlen($payload)) . $payload;
 						   print "sending message :" . $payload . "n";
 						   fwrite($fp, $msg);
+						   
+						   $result2 = pg_query($dbconn3,"update push_notifiers set ios_notification_badge = '$notification' where ios_token_id = '$deviceToken'");
 					}
 			}
 		}
+	$result3 = pg_query($dbconn3,"update matches set published_result_notification = 't' where id = '$value[id]'");
 }
+fclose($fp);
+pg_close($dbconn3);
 
 ?>
