@@ -1,4 +1,4 @@
-!#
+ #!/bin/php
 <?php
 $message = "Test of Cron Jon".rand();
 						$notification = 1;
