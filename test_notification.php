@@ -26,5 +26,6 @@ $message = "Test of Cron Jon".rand();
 						   $msg = chr (0) . pack("n",32) . pack('H*', str_replace(' ', '', $deviceToken)) . pack("n",strlen($payload)) . $payload;
 						   print "sending message :" . $payload . "n";
 						   fwrite($fp, $msg);
-						   
+						   fclose($fp);
+						   pg_close($dbconn3);
 						   ?>
