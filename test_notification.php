@@ -27,5 +27,5 @@ $message = "Test of Cron Jon".rand();
 						   print "sending message :" . $payload . "n";
 						   fwrite($fp, $msg);
 						   fclose($fp);
-						   pg_close($dbconn3);
+						   
 						   ?>
