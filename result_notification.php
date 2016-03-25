@@ -13,7 +13,7 @@ foreach ($rows as $key => $value)
 {
 	if($rows!=NULL)
 		{
-		//	echo "Key: $key; Value: $value[name]<br />\n";
+			echo "Key: $key; Value: $value[name]<br />\n";
 			$result1 = pg_query($dbconn3,"select a.user_id, b.ios_token_id,b.ios_notification_badge from (
 				select user_id from duel_games where gameable_id = '$value[id]' and gameable_type = 'Match' and status = 'finished'
 				union
