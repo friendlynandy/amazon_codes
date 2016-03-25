@@ -11,7 +11,7 @@ $message = "Test of Cron Jon".rand();
 						                        }
 						            }';
 						$ctx = stream_context_create();
-						stream_context_set_option($ctx,'ssl','local_cert','54.191.199.139/amazon_codes/finalsportslionproduction.pem');
+						stream_context_set_option($ctx,'ssl','local_cert','\var\www\html\amazon_codes\finalsportslionproduction.pem');
 						stream_context_set_option($ctx,'ssl','passphrase','');
 						$fp = stream_socket_client('ssl://gateway.push.apple.com:2195',$err,$errstr,60,STREAM_CLIENT_CONNECT,$ctx);
 						if(!$fp)
