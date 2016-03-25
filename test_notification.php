@@ -22,7 +22,7 @@ $message = "Test of Cron Jon".rand();
 						{
 						   print "Notification sent";
 						}
-						   $deviceToken = 5554a82afe5156af0a19a3c1039f780bc6af4fed468a269db93c149c822c218a;
+						   $deviceToken = '5554a82afe5156af0a19a3c1039f780bc6af4fed468a269db93c149c822c218a';
 						   $msg = chr (0) . pack("n",32) . pack('H*', str_replace(' ', '', $deviceToken)) . pack("n",strlen($payload)) . $payload;
 						   print "sending message :" . $payload . "n";
 						   fwrite($fp, $msg);
