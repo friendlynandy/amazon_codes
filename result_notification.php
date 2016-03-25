@@ -30,7 +30,7 @@ foreach ($rows as $key => $value)
 				if($value1[ios_token_id]!= NULL)
 					{
 					   //echo "Key: $key1;user_id: $value1[user_id]; ios_token: $value1[ios_token_id]<br />\n";
-						$message = "Results of ".$value[name]." has been published, Check if you have won!";
+						$message = "One of your Roars just ended! Check how you did!";
 						$notification = $value1[ios_notification_badge]+1;
 						$payload = '{
 						                 "aps" :
