@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 require('connection.php');
 $result = pg_query($dbconn3,"select id,name from matches where updated_at >= '2016-03-23' and published_result = 't' and published_result_notification = 'f'");
@@ -40,7 +41,7 @@ foreach ($rows as $key => $value)
 						                        }
 						            }';
 						$ctx = stream_context_create();
-						stream_context_set_option($ctx,'ssl','local_cert','finalsportslionproduction.pem');
+						stream_context_set_option($ctx,'ssl','local_cert',$_SERVER['DOCUMENT_ROOT'].'/var/www/html/amazon_codes/finalsportslionproduction.pem');
 						stream_context_set_option($ctx,'ssl','passphrase','');
 						$fp = stream_socket_client('ssl://gateway.push.apple.com:2195',$err,$errstr,60,STREAM_CLIENT_CONNECT,$ctx);
 						if(!$fp)
